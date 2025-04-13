@@ -651,7 +651,28 @@
                 </div>
             </div>
         </div>
-    </footer>
+    
+<div class="relative w-full overflow-hidden" style="height:150px; pointer-events: none; z-index:0;">
+    
+<svg viewBox="0 0 1200 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:auto;">
+  <defs>
+    <linearGradient id="grad1" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#c0f0f5" />
+      <stop offset="100%" stop-color="#a1e3ef" />
+    </linearGradient>
+  </defs>
+  <path fill="url(#grad1)">
+    <animate attributeName="d" dur="12s" repeatCount="indefinite"
+      values="
+        M0,30 C300,90 900,-30 1200,30 L1200,150 L0,150 Z;
+        M0,40 C300,-10 900,100 1200,40 L1200,150 L0,150 Z;
+        M0,30 C300,90 900,-30 1200,30 L1200,150 L0,150 Z" />
+  </path>
+</svg>
+
+</div>
+
+</footer>
 
     <!-- Back to top button -->
     <button id="back-to-top" class="fixed bottom-6 right-6 bg-teal-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
