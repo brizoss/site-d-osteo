@@ -100,7 +100,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-teal-900 mb-4">Cabinet d'Ostéopathie</h1>
                 <h2 class="text-xl md:text-2xl text-teal-800 mb-6">Ostéopathe D.O à Pinet</h2>
                 <p class="text-gray-700 mb-8 text-lg">Votre santé par une approche globale et personnalisée.</p>
-                <a href="https://rdv.terapiz.com/osteopathe/pinet/frederic-murria" target="_blank" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 inline-flex items-center">
+                <a href="https://rdv.terapiz.com/osteopathe/pinet/frederic-murria" target="_blank" class="btn-prise-rdv bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 inline-flex items-center">
     <i class="fas fa-calendar-check mr-2"></i> Prendre rendez-vous
 </a>
 <p class="mt-6 text-teal-700 italic text-base">Nouveau cabinet en réhabilitation à Pinet — ouverture prochaine</p>
@@ -613,6 +613,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </section>
+	<script>
+document.querySelectorAll('.btn-prise-rdv').forEach(button => {
+  button.addEventListener('click', function() {
+    gtag('event', 'clic_prendre_rdv', {
+      event_category: 'engagement',
+      event_label: 'Bouton Prendre RDV',
+      value: 1
+    });
+  });
+});
+</script>
+
 </body>
 </html>
 
@@ -652,7 +664,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div>
                     <h4 class="font-bold mb-4">Prendre rendez-vous</h4>
-                    <a href="https://rdv.terapiz.com/osteopathe/pinet/frederic-murria" target="_blank" class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded shadow transition duration-300 mb-4">
+                    <a href="https://rdv.terapiz.com/osteopathe/pinet/frederic-murria" target="_blank" class="btn-prise-rdv inline-block bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded shadow transition duration-300 mb-4">
                         <i class="fas fa-calendar-alt mr-2"></i> En ligne
                     </a>
                     <p class="text-teal-100 text-sm">Ou par téléphone aux heures d'ouverture</p>
@@ -764,6 +776,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </script>
 </body>
 </html>
+
 
 
 
