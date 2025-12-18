@@ -24,6 +24,9 @@
     .nav-link:hover:after{width:100%}
     .accordion-content{max-height:0;overflow:hidden;transition:max-height .3s ease}
     .accordion-content.active{max-height:500px}
+
+    /* Espace entre les deux maps */
+    .map-gap { height: 1.25rem; } /* ~20px */
   </style>
 </head>
 <body class="font-sans text-gray-700">
@@ -73,12 +76,11 @@
         <a href="https://rdv.terapiz.com/osteopathe/pinet/frederic-murria" target="_blank" rel="noopener" class="btn-prise-rdv bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 inline-flex items-center">
           <i class="fas fa-calendar-check mr-2"></i> Prendre rendez-vous
         </a>
-        <p class="mt-6 text-teal-700 italic text-base">Nouveau cabinet en réhabilitation à Pinet au 21 avenie de Pomerols 34850 PINET — ouverture prochaine- 265 Avenue Etats du Languedoc, les bureaux du Polygone - 9ème étage 34000 Montpellier</p>
+        <p class="mt-6 text-teal-700 italic text-base">Nouveau cabinet en réhabilitation à Pinet au 21 avenue de Pomerols 34850 PINET — ouverture prochaine — Les bureaux du Polygone, 9ème étage, 34000 Montpellier</p>
       </div>
       <div class="md:w-1/2 flex justify-center">
         <div class="bg-white p-6 rounded-xl shadow-xl max-w-md w-full">
           <h3 class="text-xl font-semibold text-teal-800 mb-4">Consultations sur rendez-vous</h3>
-          <!-- BLOC ADRESSE CORRIGÉ -->
           <div class="flex items-center mb-4">
             <div class="bg-teal-100 p-2 rounded-full mr-3">
               <i class="fas fa-map-marker-alt text-teal-600"></i>
@@ -109,7 +111,7 @@
   <script src="https://static.elfsight.com/platform/platform.js" async></script>
   <div class="elfsight-app-2462fbaa-084b-4373-91c0-224c3f82d0c3" data-elfsight-app-lazy></div>
 
-  <!-- PRESENTATION (fusion des 2 blocs en sous-sections) -->
+  <!-- PRESENTATION -->
   <section id="presentation" class="py-16">
     <div class="container mx-auto px-4">
       <!-- Sous-section 1 -->
@@ -146,7 +148,7 @@
     </div>
   </section>
 
-  <!-- PARCOURS (une seule timeline) -->
+  <!-- PARCOURS -->
   <section id="parcours" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center text-teal-800 mb-12">Mon parcours professionnel</h2>
@@ -203,60 +205,71 @@
     </div>
   </section>
 
-  <!-- CONSULTATIONS (unique) -->
+  <!-- CONSULTATIONS (5 cartes) -->
   <section id="consultations" class="py-16">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center text-teal-800 mb-12">Les consultations</h2>
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <!-- Consultation adulte -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
           <div class="bg-teal-600 p-4 text-white">
-            <h3 class="text-xl font-semibold">Consultation adulte</h3>
+            <h3 class="text-xl font-semibold">Consultation d'ostéopathie</h3>
           </div>
           <div class="p-6">
-            <p class="text-gray-700 mb-4">Pour les douleurs articulaires, musculaires, maux de tête, troubles digestifs ou simplement en prévention.Douleurs femme enceinte et post partum</p>
-            <ul class="text-gray-600 mb-4 space-y-2">
-              <li class="flex items-start"><i class="fas fa-check text-teal-500 mr-2 mt-1"></i><span>Bilan complet</span></li>
-              <li class="flex items-start"><i class="fas fa-check text-teal-500 mr-2 mt-1"></i><span>Traitement personnalisé</span></li>
-              <li class="flex items-start"><i class="fas fa-check text-teal-500 mr-2 mt-1"></i><span>Conseils adaptés</span></li>
-            </ul>
-            <p class="text-gray-500 text-sm">Durée : 50 minutes environ</p>
+            <p class="text-gray-700 mb-4">Bilan complet, prise en charge globale des douleurs musculo-squelettiques et conseils adaptés.</p>
+            <p class="text-gray-500 text-sm"><strong>Durée :</strong> 50 min • <strong>Tarif :</strong> 60€</p>
           </div>
         </div>
 
+        <!-- Consultation enfant -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
           <div class="bg-teal-600 p-4 text-white">
-            <h3 class="text-xl font-semibold">Consultation enfant</h3>
+            <h3 class="text-xl font-semibold">Consultation -12 ans</h3>
           </div>
           <div class="p-6">
-            <p class="text-gray-700 mb-4">Formé sur le terrain, j’ai réalisé pendant des années les clichés et mesures posturales en radiologie (axes physiologiques, podométrie, pangonométrie, analyses debout et couché). Ce vécu alimente aujourd’hui ma lecture fine du corps et de ses déséquilibres.</p>
-            <ul class="text-gray-600 mb-4 space-y-2">
-              <li class="flex items-start"><i class="fas fa-check text-teal-500 mr-2 mt-1"></i><span>Approche douce</span></li>
-              <li class="flex items-start"><i class="fas fa-check text-teal-500 mr-2 mt-1"></i><span>Techniques adaptées</span></li>
-              <li class="flex items-start"><i class="fas fa-check text-teal-500 mr-2 mt-1"></i><span>Dialogue avec les parents</span></li>
-            </ul>
-            <p class="text-gray-500 text-sm">Durée : 50 minutes</p>
+            <p class="text-gray-700 mb-4">Approche douce et adaptée, dialogue avec les parents.</p>
+            <p class="text-gray-500 text-sm"><strong>Durée :</strong> 30 min • <strong>Tarif :</strong> 40€</p>
           </div>
         </div>
 
+        <!-- Consultation ciblée -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
           <div class="bg-teal-600 p-4 text-white">
-            <h3 class="text-xl font-semibold">Consultation sportif</h3>
+            <h3 class="text-xl font-semibold">Consultation ciblée</h3>
           </div>
           <div class="p-6">
-            <p class="text-gray-700 mb-4">Pour préparer une compétition, récupérer après l'effort ou traiter des douleurs liées à la pratique sportive.</p>
-            <ul class="text-gray-600 mb-4 space-y-2">
-              <li class="flex items-start"><i class="fas fa-check text-teal-500 mr-2 mt-1"></i><span>Analyse biomécanique</span></li>
-              <li class="flex items-start"><i class="fas fa-check text-teal-500 mr-2 mt-1"></i><span>Prévention des blessures</span></li>
-              <li class="flex items-start"><i class="fas fa-check text-teal-500 mr-2 mt-1"></i><span>Amélioration des performances</span></li>
-            </ul>
-            <p class="text-gray-500 text-sm">Durée : 45 minutes à 1 heure</p>
+            <p class="text-gray-700 mb-4">Séance courte et ciblée sur une problématique précise (douleur localisée, suivi spécifique).</p>
+            <p class="text-gray-500 text-sm"><strong>Durée :</strong> 30 min • <strong>Tarif :</strong> 35€</p>
           </div>
         </div>
+
+        <!-- Drainage lymphatique -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+          <div class="bg-teal-600 p-4 text-white">
+            <h3 class="text-xl font-semibold">Drainage lymphatique</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-700 mb-4">Séance spécialisée pour œdèmes, récupération post-opératoire ou post-effort.</p>
+            <p class="text-gray-500 text-sm"><strong>Durée :</strong> 40 min • <strong>Tarif :</strong> 50€</p>
+          </div>
+        </div>
+
+        <!-- Massage thérapeutique -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+          <div class="bg-teal-600 p-4 text-white">
+            <h3 class="text-xl font-semibold">Massage thérapeutique</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-700 mb-4">Massage de récupération, détente musculaire et amélioration de la mobilité.</p>
+            <p class="text-gray-500 text-sm"><strong>Durée :</strong> 50 min • <strong>Tarif :</strong> 70€</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- TARIFS (unique) -->
+  <!-- TARIFS (mis à jour : plus d'abonnements) -->
   <section id="tarifs" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center text-teal-800 mb-12">Tarifs et remboursements</h2>
@@ -265,18 +278,20 @@
           <div class="md:w-1/2 p-8 bg-teal-700 text-white">
             <h3 class="text-xl font-semibold mb-4">Tarifs des consultations</h3>
             <ul class="space-y-4">
-              <li class="flex justify-between border-b border-teal-600 pb-2"><span>Consultation adulte</span><span class="font-medium">60€ pour 1h</span></li>
-              <li class="flex justify-between border-b border-teal-600 pb-2"><span>Consultation enfant (-12 ans)</span><span class="font-medium">40€</span></li>
-              <li class="flex justify-between border-b border-teal-600 pb-2"><span>Pas de consultation pour les nourrissons &lt; 3 ans</span><span class="font-medium"></span></li>
-              <li class="flex justify-between"><span>Abonnements 4 / 5 / 6 consultations</span><span class="font-medium">200€ / 225€ / 240€</span></li>
+              <li class="flex justify-between border-b border-teal-600 pb-2"><span>Consultation adulte</span><span class="font-medium">60€ — 50 min</span></li>
+              <li class="flex justify-between border-b border-teal-600 pb-2"><span>Consultation enfant (-12 ans)</span><span class="font-medium">40€ — 30 min</span></li>
+              <li class="flex justify-between border-b border-teal-600 pb-2"><span>Consultation ciblée</span><span class="font-medium">35€ — 30 min</span></li>
+              <li class="flex justify-between border-b border-teal-600 pb-2"><span>Drainage lymphatique</span><span class="font-medium">50€ — 40 min</span></li>
+              <li class="flex justify-between"><span>Massage thérapeutique</span><span class="font-medium">70€ — 50 min</span></li>
             </ul>
           </div>
           <div class="md:w-1/2 p-8">
             <h3 class="text-xl font-semibold mb-4 text-teal-800">Remboursements</h3>
-            <p class="text-gray-700 mb-4">L'ostéopathie n'est pas prise en charge par la Sécurité Sociale, cependant de plus en plus de mutuelles remboursent tout ou partie des consultations.</p>
-            <p class="text-gray-700 mb-6">Renseignez-vous auprès de votre complémentaire santé.</p>
+            <p class="text-gray-700 mb-4">L'ostéopathie n'est pas prise en charge par la Sécurité Sociale. De nombreuses mutuelles proposent toutefois un remboursement partiel ou total des consultations — renseignez-vous auprès de votre complémentaire santé.</p>
+            <p class="text-gray-700 mb-6">Sur simple demande, je fournis une facture afin de faciliter votre demande de remboursement.</p>
             <div class="bg-blue-50 border-l-4 border-blue-500 p-4">
-              <p class="text-blue-700">Paiement accepté : espèces, chèque, virement, PAS de CB !</p>
+              <p class="text-blue-700 font-medium">Paiement accepté : espèces, chèque ou Wero (virement instantané). <strong>PAS de CB.</strong></p>
+              <p class="text-sm text-gray-600 mt-2">Possibilité de régler à l'avance via un lien facultatif (si activé), sinon règlement au cabinet.</p>
             </div>
           </div>
         </div>
@@ -284,7 +299,7 @@
     </div>
   </section>
 
-  <!-- HORAIRES (unique) -->
+  <!-- HORAIRES & PLAN (maps avec espacement) -->
   <section id="horaires" class="py-16">
     <div class="container mx-auto px-4">
       <div class="flex flex-col md:flex-row">
@@ -292,12 +307,12 @@
           <h2 class="text-3xl font-bold text-teal-800 mb-6">Horaires d'ouverture</h2>
           <div class="bg-white rounded-lg shadow-md p-6 mb-8">
             <ul class="space-y-3">
-              <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium">Un lundi sur deux</span><span>9h - 12h / 14h - 19h</span></li>
-              <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium">Mardi</span><span>9h - 12h / 14h - 19h</span></li>
-              <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium">Mercredi</span><span>Fermé (ouverture prochainement)</span></li>
-              <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium">Jeudi</span><span>9h - 12h / 14h - 19h</span></li>
-              <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium">Vendredi</span><span>9h - 12h / 14h - 19h</span></li>
-              <li class="flex justify-between"><span class="font-medium">Samedi</span><span>Fermé (ouverture prochainement 9h - 12h)</span></li>
+              <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium">Lundi (Pinet)</span><span>9h - 12h / 14h - 19h</span></li>
+              <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium">Mardi (Montpellier)</span><span>9h - 12h / 14h - 19h</span></li>
+              <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium">Mercredi (Pinet)</span><span>9h - 12h / 14h - 19h</span></li>
+              <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium">Jeudi (Pinet)</span><span>9h - 12h / 14h - 19h</span></li>
+              <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium">Vendredi (Pinet)</span><span>9h - 12h / 14h - 19h</span></li>
+              <li class="flex justify-between"><span class="font-medium">Samedi</span><span>Fermé</span></li>
             </ul>
           </div>
           <p class="text-gray-600">Consultations uniquement sur rendez-vous</p>
@@ -305,9 +320,12 @@
             <i class="fas fa-calendar-alt mr-2"></i> Prendre rendez-vous
           </a>
         </div>
+
         <div class="md:w-1/2">
           <h2 class="text-3xl font-bold text-teal-800 mb-6">Plan d'accès</h2>
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+
+          <!-- MAP PINET -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden mb-4">
             <div class="p-4 bg-gray-100">
               <p class="text-gray-700"><i class="fas fa-map-marker-alt text-teal-600 mr-2"></i> Forum Médical, 34850 Pinet</p>
             </div>
@@ -320,6 +338,25 @@
               <p class="text-gray-600">Accessible aux personnes à mobilité réduite.</p>
             </div>
           </div>
+
+          <!-- PETIT ESPACE ENTRE LES DEUX MAPS -->
+          <div class="map-gap"></div>
+
+          <!-- MAP MONTPELLIER -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-4 bg-gray-100">
+              <p class="text-gray-700"><i class="fas fa-map-marker-alt text-teal-600 mr-2"></i> Les bureaux du Polygone – 9ème étage, 265 Avenue des États du Languedoc, 34000 Montpellier</p>
+            </div>
+            <div class="h-64 bg-gray-200 rounded-lg overflow-hidden">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5777.882187510598!2d3.8849575999999995!3d43.6077681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b6af775060875f%3A0x51262bec5641cf1d!2sMURRIA%20Fr%C3%A9d%C3%A9ric%20%E2%80%93%20Ost%C3%A9opathe%20D.O%20(ISOGM)%20%E2%80%93%20Montpellier%20Polygone!5e0!3m2!1sfr!2sfr!4v1766049023438!5m2!1sfr!2sfr" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="p-4">
+              <h4 class="font-medium text-gray-800 mb-2">Accès</h4>
+              <p class="text-gray-600">Accès par l’accueil des bureaux du Polygone.</p>
+              <p class="text-gray-600">Ascenseur jusqu’au 9ème étage.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -400,6 +437,7 @@
             <h3 class="text-xl font-semibold text-teal-800 mb-4">Informations de contact</h3>
             <ul class="space-y-3 text-gray-700">
               <li><i class="fas fa-map-marker-alt text-teal-600 mr-2"></i> Forum Médical, 34850 Pinet</li>
+              <li><i class="fas fa-map-marker-alt text-teal-600 mr-2"></i> Les bureaux du Polygone – 9ème étage, 34000 Montpellier</li>
               <li><i class="fas fa-phone-alt text-teal-600 mr-2"></i> 06 70 60 59 84</li>
               <li><i class="fas fa-envelope text-teal-600 mr-2"></i> contact@osteomagazine.com</li>
               <li class="mt-4 text-center text-sm text-gray-700 italic">
@@ -618,7 +656,3 @@
   </script>
 </body>
 </html>
-
-
-
-
