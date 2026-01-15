@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GLVD0P7PJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,130 +16,126 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     .hero-gradient{background:linear-gradient(135deg,#e0f7fa 0%,#b2ebf2 50%,#80deea 100%)}
-    .testimonial-card{transition:transform .3s ease}
-    .testimonial-card:hover{transform:translateY(-5px)}
     .nav-link{position:relative}
     .nav-link:after{content:'';position:absolute;width:0;height:2px;bottom:0;left:0;background-color:#00acc1;transition:width .3s ease}
     .nav-link:hover:after{width:100%}
     .accordion-content{max-height:0;overflow:hidden;transition:max-height .3s ease}
     .accordion-content.active{max-height:500px}
-
-    /* Espace entre les deux maps */
-    .map-gap { height: 1.25rem; } /* ~20px */
+    
+    /* Animation douce pour les onglets */
+    .fade-in { animation: fadeIn 0.5s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
-<body class="font-sans text-gray-700">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKL2W9J4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+<body class="font-sans text-gray-700 pb-20 md:pb-0"> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKL2W9J4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <!-- HEADER -->
-  <header class="bg-white shadow-sm sticky top-0 z-50">
+  <header class="bg-white shadow-sm sticky top-0 z-40">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
       <div class="flex items-center">
         <div class="bg-white p-2 rounded-full mr-3">
           <img src="https://rdv-osteopathe-pinet.netlify.app/logo.png" alt="Logo Frédéric Murria" class="h-10 w-auto">
         </div>
-        <h1 class="text-xl font-bold text-teal-700">Frédéric Murria</h1>
-        <span class="ml-2 text-sm bg-teal-100 text-teal-800 px-2 py-1 rounded">Ostéopathe D.O</span>
+        <div>
+            <h1 class="text-xl font-bold text-teal-700 leading-tight">Frédéric Murria</h1>
+            <span class="text-xs bg-teal-100 text-teal-800 px-2 py-0.5 rounded">Ostéopathe D.O</span>
+        </div>
       </div>
       <nav class="hidden md:flex space-x-8">
         <a href="#presentation" class="nav-link text-gray-600 hover:text-teal-600">Présentation</a>
         <a href="#consultations" class="nav-link text-gray-600 hover:text-teal-600">Consultations</a>
         <a href="#tarifs" class="nav-link text-gray-600 hover:text-teal-600">Tarifs</a>
-        <a href="#horaires" class="nav-link text-gray-600 hover:text-teal-600">Horaires</a>
+        <a href="#horaires" class="nav-link text-gray-600 hover:text-teal-600">Horaires & Accès</a>
         <a href="#contact" class="nav-link text-gray-600 hover:text-teal-600">Contact</a>
       </nav>
-      <button class="md:hidden text-gray-600" id="mobile-menu-button">
+      <button class="md:hidden text-gray-600 p-2" id="mobile-menu-button" aria-label="Menu">
         <i class="fas fa-bars text-2xl"></i>
       </button>
     </div>
-    <!-- Mobile menu -->
-    <div class="md:hidden hidden bg-white py-2 px-4 shadow-md" id="mobile-menu">
-      <a href="#presentation" class="block py-2 text-gray-600 hover:text-teal-600">Présentation</a>
-      <a href="#consultations" class="block py-2 text-gray-600 hover:text-teal-600">Consultations</a>
-      <a href="#tarifs" class="block py-2 text-gray-600 hover:text-teal-600">Tarifs</a>
-      <a href="#horaires" class="block py-2 text-gray-600 hover:text-teal-600">Horaires</a>
-      <a href="#avis" class="block py-2 text-gray-600 hover:text-teal-600">Avis</a>
-      <a href="#contact" class="block py-2 text-gray-600 hover:text-teal-600">Contact</a>
+    <div class="md:hidden hidden bg-white py-2 px-4 shadow-md absolute w-full z-50" id="mobile-menu">
+      <a href="#presentation" class="block py-3 border-b border-gray-100 text-gray-600 hover:text-teal-600">Présentation</a>
+      <a href="#consultations" class="block py-3 border-b border-gray-100 text-gray-600 hover:text-teal-600">Consultations</a>
+      <a href="#tarifs" class="block py-3 border-b border-gray-100 text-gray-600 hover:text-teal-600">Tarifs</a>
+      <a href="#horaires" class="block py-3 border-b border-gray-100 text-gray-600 hover:text-teal-600">Horaires & Accès</a>
+      <a href="#avis" class="block py-3 border-b border-gray-100 text-gray-600 hover:text-teal-600">Avis</a>
+      <a href="#contact" class="block py-3 text-gray-600 hover:text-teal-600">Contact</a>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero-gradient py-16 md:py-24">
+  <section class="hero-gradient py-12 md:py-24">
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
       <div class="md:w-1/2 mb-10 md:mb-0">
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-teal-900 mb-4">Cabinet d'Ostéopathie</h1>
-        <h2 class="text-xl md:text-2xl text-teal-800 mb-6">Ostéopathe D.O à Pinet et à Montpellier </h2>
+        <h1 class="text-3xl md:text-5xl font-bold text-teal-900 mb-4">Cabinet d'Ostéopathie</h1>
+        <h2 class="text-xl md:text-2xl text-teal-800 mb-6">Ostéopathe D.O à Pinet et à Montpellier</h2>
         <p class="text-gray-700 mb-8 text-lg">Votre santé par une approche globale et personnalisée.</p>
-        <a href="https://rdv.terapiz.com/osteopathe/pinet/frederic-murria" target="_blank" rel="noopener" class="btn-prise-rdv bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 inline-flex items-center">
+        
+        <a href="https://rdv.terapiz.com/osteopathe/pinet/frederic-murria" target="_blank" rel="noopener" class="hidden md:inline-flex bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 items-center btn-prise-rdv">
           <i class="fas fa-calendar-check mr-2"></i> Prendre rendez-vous
         </a>
-        <p class="mt-6 text-teal-700 italic text-base">Nouveau cabinet à présent OUVERT! 21 avenue de Pomerols 34850 PINET — et — Les bureaux du Polygone, 9ème étage, 34000 Montpellier</p>
+
+        <p class="mt-8 text-teal-800 bg-teal-50 p-4 rounded-lg border-l-4 border-teal-500 text-sm md:text-base">
+            <i class="fas fa-info-circle mr-2"></i> <strong>Nouveaux cabinets OUVERTS !</strong><br>
+            • 21 avenue de Pomerols 34850 <strong>PINET</strong><br>
+            • Bureaux du Polygone (9ème étage), 34000 <strong>MONTPELLIER</strong>
+        </p>
       </div>
       <div class="md:w-1/2 flex justify-center">
-        <div class="bg-white p-6 rounded-xl shadow-xl max-w-md w-full">
-          <h3 class="text-xl font-semibold text-teal-800 mb-4">Consultations sur rendez-vous</h3>
-          <div class="flex items-center mb-4">
-            <div class="bg-teal-100 p-2 rounded-full mr-3">
+        <div class="bg-white p-6 rounded-xl shadow-xl max-w-md w-full relative z-10">
+          <h3 class="text-xl font-semibold text-teal-800 mb-4">Informations rapides</h3>
+          <div class="flex items-start mb-4">
+            <div class="bg-teal-100 p-2 rounded-full mr-3 mt-1 flex-shrink-0">
               <i class="fas fa-map-marker-alt text-teal-600"></i>
             </div>
-            <p>
-              21 av de Pomerols, 34850 Pinet<br>
-              Les bureaux du Polygone - 9ème étage 34000 Montpellier
+            <p class="text-sm">
+              <strong>Pinet :</strong> 21 av de Pomerols<br>
+              <strong>Montpellier :</strong> Polygone, 9ème étage
             </p>
           </div>
           <div class="flex items-center mb-4">
-            <div class="bg-teal-100 p-2 rounded-full mr-3">
+            <div class="bg-teal-100 p-2 rounded-full mr-3 flex-shrink-0">
               <i class="fas fa-phone-alt text-teal-600"></i>
             </div>
-            <p>06 70 60 59 84</p>
+            <p class="font-medium">06 70 60 59 84</p>
           </div>
           <div class="flex items-center">
-            <div class="bg-teal-100 p-2 rounded-full mr-3">
+            <div class="bg-teal-100 p-2 rounded-full mr-3 flex-shrink-0">
               <i class="fas fa-envelope text-teal-600"></i>
             </div>
-            <p>contact@osteomagazine.com</p>
+            <p class="text-sm break-all">contact@osteomagazine.com</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WIDGET AVIS (Elfsight) -->
   <script src="https://static.elfsight.com/platform/platform.js" async></script>
   <div class="elfsight-app-2462fbaa-084b-4373-91c0-224c3f82d0c3" data-elfsight-app-lazy></div>
 
-  <!-- PRESENTATION -->
   <section id="presentation" class="py-16">
     <div class="container mx-auto px-4">
-      <!-- Sous-section 1 -->
       <div class="flex flex-col md:flex-row items-center mb-16">
         <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
           <h2 class="text-3xl font-bold text-teal-800 mb-6">Anciennement manipulateur radio</h2>
-          <p class="text-gray-700 mb-4">Avec une carrière enrichissante de 23 ans en tant que manipulateur radio, j'ai côtoyé des milliers de patients, rencontrant une diversité de pathologies qui ont forgé une expertise considérable en sémio-pathologie. Mon parcours a débuté avec l'utilisation du tube colonne dans plusieurs cabinets de radiologie, me permettant de déceler, avec la meilleure incidence possible, des traits fracturaires à travers tout le corps, mais aussi des pathologies diverses et variées comme par exemple cardio-vasculaire ou pulmonaire.</p>
-          <p class="text-gray-700 mb-4">L'évolution vers des modalités telles que le scanner et l'IRM a élargi mon horizon, explorant les différents systèmes qui composent notre organisme, que ce soit en gastro-entérologie, en urologie, en vasculaire, et au-delà. J'ai participé activement à des procédures variées, allant des coronarographies aux coroscanners, des examens vasculaires aux blocs opératoires. Mon expérience s'étend également à la médecine nucléaire et à la radiothérapie.</p>
-          <p class="text-gray-700 mb-6">Partageant une collaboration étroite avec les médecins radiologues et rhumatologues, j'ai perfectionné la préparation des infiltrations épidurales et articulaires, ainsi que des arthrographies. Mon parcours reflète une polyvalence unique, où j'ai développé des compétences approfondies en anatomie, offrant une compréhension holistique du corps humain.</p>
+          <p class="text-gray-700 mb-4 text-justify">Avec une carrière enrichissante de 23 ans en tant que manipulateur radio, j'ai côtoyé des milliers de patients, rencontrant une diversité de pathologies qui ont forgé une expertise considérable en sémio-pathologie. Mon parcours a débuté avec l'utilisation du tube colonne dans plusieurs cabinets de radiologie, me permettant de déceler, avec la meilleure incidence possible, des traits fracturaires à travers tout le corps.</p>
+          <p class="text-gray-700 mb-4 text-justify">L'évolution vers des modalités telles que le scanner et l'IRM a élargi mon horizon, explorant les différents systèmes qui composent notre organisme. J'ai participé activement à des procédures variées, allant des coronarographies aux coroscanners, des examens vasculaires aux blocs opératoires.</p>
+          <p class="text-gray-700 mb-6 text-justify">Partageant une collaboration étroite avec les médecins radiologues et rhumatologues, j'ai perfectionné la préparation des infiltrations épidurales et articulaires. Mon parcours reflète une polyvalence unique, où j'ai développé des compétences approfondies en anatomie, offrant une compréhension holistique du corps humain.</p>
         </div>
         <div class="md:w-1/2">
-          <div class="bg-gray-100 rounded-xl overflow-hidden shadow-lg">
+          <div class="bg-gray-100 rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition duration-300">
             <img src="https://rdv-osteopathe-pinet.netlify.app/manipulateur.png" alt="Manipulateur radio" class="w-full h-auto object-cover">
           </div>
         </div>
       </div>
-      <!-- Sous-section 2 -->
       <div class="flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+        <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 order-1 md:order-2 md:pl-10">
           <h2 class="text-3xl font-bold text-teal-800 mb-6">Votre ostéopathe à Pinet</h2>
-          <p class="text-gray-700 mb-4">Aujourd'hui, en tant que professionnel de l'ostéopathie, cette expérience diversifiée me permet d'apporter une approche unique et complète à la prise en charge de la douleur. Mon bagage médical constitue une base solide pour comprendre et traiter efficacement une gamme variée de conditions.</p>
-          <p class="text-gray-700 mb-4">Depuis 5 ans, j'ai consacré exclusivement mon expertise au métier d'ostéopathe, où j'ai pu plonger profondément dans la compréhension de la biomécanique humaine.</p>
-          <p class="text-gray-700 mb-6">Cette transition m'a permis d'explorer diverses dimensions de la santé, allant de la rééducation au reboutement, en passant par différentes techniques de réflexologie. Mon engagement s'est concentré sur le traitement des troubles musculosquelettiques et des désordres neuro-végétatifs.</p>
-          <div class="bg-teal-50 border-l-4 border-teal-500 p-4">
-            <p class="text-teal-700 italic">« Chaque jour, je mets à profit cette expérience pour offrir une approche holistique. Ici, on traite le symptôme avant tout et simplement. »</p>
+          <p class="text-gray-700 mb-4 text-justify">Aujourd'hui, en tant que professionnel de l'ostéopathie, cette expérience diversifiée me permet d'apporter une approche unique et complète à la prise en charge de la douleur. Mon bagage médical constitue une base solide pour comprendre et traiter efficacement une gamme variée de conditions.</p>
+          <p class="text-gray-700 mb-4 text-justify">Depuis 5 ans, j'ai consacré exclusivement mon expertise au métier d'ostéopathe, où j'ai pu plonger profondément dans la compréhension de la biomécanique humaine. Cette transition m'a permis d'explorer diverses dimensions de la santé, allant de la rééducation au reboutement.</p>
+          <div class="bg-teal-50 border-l-4 border-teal-500 p-4 mt-6">
+            <p class="text-teal-700 italic font-medium">« Chaque jour, je mets à profit cette expérience pour offrir une approche holistique. Ici, on traite le symptôme avant tout et simplement. »</p>
           </div>
         </div>
-        <div class="md:w-1/2">
-          <div class="bg-gray-100 rounded-xl overflow-hidden shadow-lg">
+        <div class="md:w-1/2 order-2 md:order-1">
+          <div class="bg-gray-100 rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition duration-300">
             <img src="https://rdv-osteopathe-pinet.netlify.app/osteo.png" alt="Cabinet d'ostéopathie" class="w-full h-auto object-cover">
           </div>
         </div>
@@ -148,7 +143,6 @@
     </div>
   </section>
 
-  <!-- PARCOURS -->
   <section id="parcours" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center text-teal-800 mb-12">Mon parcours professionnel</h2>
@@ -158,45 +152,45 @@
 
           <div class="mb-8 flex justify-between items-center w-full">
             <div class="order-1 w-5/12"></div>
-            <div class="z-20 flex items-center order-1 bg-teal-100 shadow-xl w-8 h-8 rounded-full">
+            <div class="z-20 flex items-center order-1 bg-teal-100 shadow-xl w-8 h-8 rounded-full border-2 border-white">
               <span class="mx-auto font-semibold text-lg text-teal-800">4</span>
             </div>
-            <div class="order-1 bg-white rounded-lg shadow-lg w-5/12 px-6 py-4">
+            <div class="order-1 bg-white rounded-lg shadow-md w-5/12 px-6 py-4 hover:shadow-lg transition duration-200">
               <h3 class="text-lg font-semibold text-teal-800">Diplôme d'Ostéopathe D.O</h3>
-              <p class="text-gray-600">D.U. Ostéopathie – ISOGM-IFBO (5 ans)</p>
+              <p class="text-gray-600 text-sm">D.U. Ostéopathie – ISOGM-IFBO (5 ans)</p>
             </div>
           </div>
 
           <div class="mb-8 flex justify-between items-center w-full flex-row-reverse">
             <div class="order-1 w-5/12"></div>
-            <div class="z-20 flex items-center order-1 bg-teal-100 shadow-xl w-8 h-8 rounded-full">
+            <div class="z-20 flex items-center order-1 bg-teal-100 shadow-xl w-8 h-8 rounded-full border-2 border-white">
               <span class="mx-auto font-semibold text-lg text-teal-800">3</span>
             </div>
-            <div class="order-1 bg-white rounded-lg shadow-lg w-5/12 px-6 py-4">
+            <div class="order-1 bg-white rounded-lg shadow-md w-5/12 px-6 py-4 hover:shadow-lg transition duration-200">
               <h3 class="text-lg font-semibold text-teal-800">Ostéopathie du sport</h3>
-              <p class="text-gray-600"></p>
+              <p class="text-gray-600 text-sm">Formation complémentaire</p>
             </div>
           </div>
 
           <div class="mb-8 flex justify-between items-center w-full">
             <div class="order-1 w-5/12"></div>
-            <div class="z-20 flex items-center order-1 bg-teal-100 shadow-xl w-8 h-8 rounded-full">
+            <div class="z-20 flex items-center order-1 bg-teal-100 shadow-xl w-8 h-8 rounded-full border-2 border-white">
               <span class="mx-auto font-semibold text-lg text-teal-800">2</span>
             </div>
-            <div class="order-1 bg-white rounded-lg shadow-lg w-5/12 px-6 py-4">
+            <div class="order-1 bg-white rounded-lg shadow-md w-5/12 px-6 py-4 hover:shadow-lg transition duration-200">
               <h3 class="text-lg font-semibold text-teal-800">Imagerie médicale</h3>
-              <p class="text-gray-600">Plus de 20 ans</p>
+              <p class="text-gray-600 text-sm">Plus de 20 ans d'expérience</p>
             </div>
           </div>
 
           <div class="mb-8 flex justify-between items-center w-full flex-row-reverse">
             <div class="order-1 w-5/12"></div>
-            <div class="z-20 flex items-center order-1 bg-teal-100 shadow-xl w-8 h-8 rounded-full">
+            <div class="z-20 flex items-center order-1 bg-teal-100 shadow-xl w-8 h-8 rounded-full border-2 border-white">
               <span class="mx-auto font-semibold text-lg text-teal-800">1</span>
             </div>
-            <div class="order-1 bg-white rounded-lg shadow-lg w-5/12 px-6 py-4">
-              <h3 class="text-lg font-semibold text-teal-800">Diplôme d'État de manipulateur d'électroradiologie médicale</h3>
-              <p class="text-gray-600">Faculté de médecine de Clermont-Ferrand (3 ans) + 1 an de prépa IPESUD</p>
+            <div class="order-1 bg-white rounded-lg shadow-md w-5/12 px-6 py-4 hover:shadow-lg transition duration-200">
+              <h3 class="text-lg font-semibold text-teal-800">Diplôme d'État MERM</h3>
+              <p class="text-gray-600 text-sm">Faculté de médecine de Clermont-Ferrand</p>
             </div>
           </div>
 
@@ -205,63 +199,86 @@
     </div>
   </section>
 
-  <!-- CONSULTATIONS (5 cartes) -->
   <section id="consultations" class="py-16">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center text-teal-800 mb-12">Les consultations</h2>
-      <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
-        <!-- Consultation adulte -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100">
           <div class="bg-teal-600 p-4 text-white">
             <h3 class="text-xl font-semibold">Consultation d'ostéopathie</h3>
           </div>
           <div class="p-6">
-            <p class="text-gray-700 mb-4">Bilan complet, prise en charge globale des douleurs musculo-squelettiques et conseils adaptés.</p>
-            <p class="text-gray-500 text-sm"><strong>Durée :</strong> 50 min • <strong>Tarif :</strong> 60€</p>
+            <p class="text-gray-700 mb-4 h-24 text-sm">Bilan complet, prise en charge globale des douleurs musculo-squelettiques et conseils adaptés.</p>
+            <div class="border-t border-gray-100 pt-4 flex justify-between items-center text-gray-600 text-sm font-medium">
+              <span><i class="far fa-clock mr-1"></i> 50 min</span>
+              <span class="text-teal-600 text-lg">60€</span>
+            </div>
           </div>
         </div>
 
-        <!-- Consultation enfant -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100">
           <div class="bg-teal-600 p-4 text-white">
             <h3 class="text-xl font-semibold">Consultation -12 ans</h3>
           </div>
           <div class="p-6">
-            <p class="text-gray-700 mb-4">Approche douce et adaptée, dialogue avec les parents.</p>
-            <p class="text-gray-500 text-sm"><strong>Durée :</strong> 30 min • <strong>Tarif :</strong> 40€</p>
+            <p class="text-gray-700 mb-4 h-24 text-sm">Approche douce et adaptée aux enfants, dialogue avec les parents pour le suivi.</p>
+            <div class="border-t border-gray-100 pt-4 flex justify-between items-center text-gray-600 text-sm font-medium">
+              <span><i class="far fa-clock mr-1"></i> 30 min</span>
+              <span class="text-teal-600 text-lg">40€</span>
+            </div>
           </div>
         </div>
 
-        <!-- Consultation ciblée -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100">
           <div class="bg-teal-600 p-4 text-white">
             <h3 class="text-xl font-semibold">Consultation ciblée</h3>
           </div>
           <div class="p-6">
-            <p class="text-gray-700 mb-4">Séance courte et ciblée sur une problématique précise (douleur localisée, suivi spécifique).</p>
-            <p class="text-gray-500 text-sm"><strong>Durée :</strong> 30 min • <strong>Tarif :</strong> 35€</p>
+            <p class="text-gray-700 mb-4 h-24 text-sm">Séance courte centrée sur une problématique précise (douleur localisée, urgence relative).</p>
+            <div class="border-t border-gray-100 pt-4 flex justify-between items-center text-gray-600 text-sm font-medium">
+              <span><i class="far fa-clock mr-1"></i> 30 min</span>
+              <span class="text-teal-600 text-lg">35€</span>
+            </div>
           </div>
         </div>
 
-        <!-- Drainage lymphatique -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100">
           <div class="bg-teal-600 p-4 text-white">
             <h3 class="text-xl font-semibold">Drainage lymphatique</h3>
           </div>
           <div class="p-6">
-            <p class="text-gray-700 mb-4">Séance spécialisée pour œdèmes, récupération post-opératoire ou post-effort.</p>
-            <p class="text-gray-500 text-sm"><strong>Durée :</strong> 40 min • <strong>Tarif :</strong> 50€</p>
+            <p class="text-gray-700 mb-4 h-24 text-sm">Technique manuelle douce destinée à stimuler la circulation de la lymphe et détoxifier l'organisme.</p>
+            <div class="border-t border-gray-100 pt-4 flex justify-between items-center text-gray-600 text-sm font-medium">
+              <span><i class="far fa-clock mr-1"></i> 40 min</span>
+              <span class="text-teal-600 text-lg">50€</span>
+            </div>
           </div>
         </div>
 
-        <!-- Massage thérapeutique -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100">
           <div class="bg-teal-600 p-4 text-white">
             <h3 class="text-xl font-semibold">Massage thérapeutique</h3>
           </div>
           <div class="p-6">
-            <p class="text-gray-700 mb-4">Massage de récupération, détente musculaire et amélioration de la mobilité.</p>
-            <p class="text-gray-500 text-sm"><strong>Durée :</strong> 50 min • <strong>Tarif :</strong> 70€</p>
+            <p class="text-gray-700 mb-4 h-24 text-sm">Massage profond de récupération, détente musculaire et amélioration de la mobilité.</p>
+            <div class="border-t border-gray-100 pt-4 flex justify-between items-center text-gray-600 text-sm font-medium">
+              <span><i class="far fa-clock mr-1"></i> 50 min</span>
+              <span class="text-teal-600 text-lg">70€</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 border border-gray-100 ring-2 ring-teal-50">
+          <div class="bg-teal-700 p-4 text-white flex justify-between items-center">
+            <h3 class="text-xl font-semibold">À domicile</h3>
+            <i class="fas fa-car-side"></i>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-700 mb-4 h-24 text-sm">Déplacement à votre domicile avec ma table de pratique. Le créneau réservé est de 2h (trajet + installation) pour une <strong>durée de soin effective de 50 min</strong>.</p>
+            <div class="border-t border-gray-100 pt-4 flex justify-between items-center text-gray-600 text-sm font-medium">
+              <span><i class="far fa-clock mr-1"></i> Créneau 2h</span>
+              <span class="text-teal-600 text-lg">70€</span>
+            </div>
           </div>
         </div>
 
@@ -269,156 +286,180 @@
     </div>
   </section>
 
-  <!-- TARIFS (mis à jour : plus d'abonnements) -->
   <section id="tarifs" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center text-teal-800 mb-12">Tarifs et remboursements</h2>
-      <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
-        <div class="md:flex">
-          <div class="md:w-1/2 p-8 bg-teal-700 text-white">
-            <h3 class="text-xl font-semibold mb-4">Tarifs des consultations</h3>
-            <ul class="space-y-4">
-              <li class="flex justify-between border-b border-teal-600 pb-2"><span>Consultation adulte</span><span class="font-medium">60€ — 50 min</span></li>
-              <li class="flex justify-between border-b border-teal-600 pb-2"><span>Consultation enfant (-12 ans)</span><span class="font-medium">40€ — 30 min</span></li>
-              <li class="flex justify-between border-b border-teal-600 pb-2"><span>Consultation ciblée</span><span class="font-medium">35€ — 30 min</span></li>
-              <li class="flex justify-between border-b border-teal-600 pb-2"><span>Drainage lymphatique</span><span class="font-medium">50€ — 40 min</span></li>
-              <li class="flex justify-between"><span>Massage thérapeutique</span><span class="font-medium">70€ — 50 min</span></li>
-            </ul>
+      <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+        
+        <div class="md:w-1/2 p-8 bg-teal-700 text-white">
+          <h3 class="text-xl font-semibold mb-6 flex items-center"><i class="fas fa-tags mr-2"></i> Grille tarifaire</h3>
+          <ul class="space-y-4">
+            <li class="flex justify-between border-b border-teal-600 pb-2 items-center">
+                <span>Consultation adulte</span>
+                <div class="text-right"><span class="block font-bold text-lg">60€</span><span class="text-xs text-teal-200">50 min</span></div>
+            </li>
+            <li class="flex justify-between border-b border-teal-600 pb-2 items-center">
+                <span>Enfant (-12 ans)</span>
+                <div class="text-right"><span class="block font-bold text-lg">40€</span><span class="text-xs text-teal-200">30 min</span></div>
+            </li>
+            <li class="flex justify-between border-b border-teal-600 pb-2 items-center">
+                <span>Consultation ciblée</span>
+                <div class="text-right"><span class="block font-bold text-lg">35€</span><span class="text-xs text-teal-200">30 min</span></div>
+            </li>
+            <li class="flex justify-between border-b border-teal-600 pb-2 items-center">
+                <span>Drainage lymphatique</span>
+                <div class="text-right"><span class="block font-bold text-lg">50€</span><span class="text-xs text-teal-200">40 min</span></div>
+            </li>
+            <li class="flex justify-between border-b border-teal-600 pb-2 items-center">
+                <span>Massage thérapeutique</span>
+                <div class="text-right"><span class="block font-bold text-lg">70€</span><span class="text-xs text-teal-200">50 min</span></div>
+            </li>
+            <li class="flex justify-between items-center bg-teal-800 p-2 rounded -mx-2">
+                <span class="font-medium"><i class="fas fa-home mr-1"></i> À domicile</span>
+                <div class="text-right"><span class="block font-bold text-lg">70€</span><span class="text-xs text-teal-200">Soin 50 min</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="md:w-1/2 p-8">
+          <h3 class="text-xl font-semibold mb-4 text-teal-800">Moyens de paiement</h3>
+          <div class="flex space-x-4 mb-6">
+             <div class="flex flex-col items-center p-3 bg-gray-50 rounded border w-1/3">
+                 <i class="fas fa-money-bill-wave text-2xl text-green-600 mb-2"></i>
+                 <span class="text-sm font-medium">Espèces</span>
+             </div>
+             <div class="flex flex-col items-center p-3 bg-gray-50 rounded border w-1/3">
+                 <i class="fas fa-money-check-alt text-2xl text-blue-600 mb-2"></i>
+                 <span class="text-sm font-medium">Chèque</span>
+             </div>
+             <div class="flex flex-col items-center p-3 bg-gray-50 rounded border w-1/3">
+                 <i class="fas fa-mobile-alt text-2xl text-purple-600 mb-2"></i>
+                 <span class="text-sm font-medium">Wero/Vir.</span>
+             </div>
           </div>
-          <div class="md:w-1/2 p-8">
-            <h3 class="text-xl font-semibold mb-4 text-teal-800">Remboursements</h3>
-            <p class="text-gray-700 mb-4">L'ostéopathie n'est pas prise en charge par la Sécurité Sociale. De nombreuses mutuelles proposent toutefois un remboursement partiel ou total des consultations — renseignez-vous auprès de votre complémentaire santé.</p>
-            <p class="text-gray-700 mb-6">Sur simple demande, je fournis une facture afin de faciliter votre demande de remboursement.</p>
-            <div class="bg-blue-50 border-l-4 border-blue-500 p-4">
-              <p class="text-blue-700 font-medium">Paiement accepté : espèces, chèque ou Wero (virement instantané). <strong>PAS de CB.</strong></p>
-              <p class="text-sm text-gray-600 mt-2">Possibilité de régler à l'avance via un lien facultatif (si activé), sinon règlement au cabinet.</p>
-            </div>
+          
+          <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+            <p class="text-red-700 font-bold flex items-center"><i class="fas fa-exclamation-triangle mr-2"></i> Pas de carte bancaire</p>
           </div>
+
+          <h3 class="text-xl font-semibold mb-2 text-teal-800">Remboursements</h3>
+          <p class="text-gray-600 text-sm mb-4">L'ostéopathie n'est pas prise en charge par la Sécurité Sociale. Cependant, la plupart des mutuelles remboursent tout ou partie des séances.</p>
+          <p class="text-gray-800 font-medium">Une facture vous sera remise sur demande.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HORAIRES & PLAN (maps avec espacement) -->
   <section id="horaires" class="py-16">
     <div class="container mx-auto px-4">
-      <div class="flex flex-col md:flex-row">
-        <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-          <h2 class="text-3xl font-bold text-teal-800 mb-6">Horaires d'ouverture</h2>
-          <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-            <ul class="space-y-3">
-              <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium">Lundi (Pinet)</span><span>9h - 12h / 14h - 19h</span></li>
-              <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium">Mardi (Montpellier)</span><span>9h - 12h / 14h - 19h</span></li>
-              <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium">Mercredi (Pinet)</span><span>9h - 12h / 14h - 19h</span></li>
-              <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium">Jeudi (Pinet)</span><span>9h - 12h / 14h - 19h</span></li>
-              <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium">Vendredi (Pinet)</span><span>9h - 12h / 14h - 19h</span></li>
-              <li class="flex justify-between"><span class="font-medium">Samedi</span><span>Fermé</span></li>
-            </ul>
-          </div>
-          <p class="text-gray-600">Consultations uniquement sur rendez-vous</p>
-          <a href="https://rdv.terapiz.com/osteopathe/pinet/frederic-murria" target="_blank" rel="noopener" class="btn-prise-rdv mt-6 inline-block bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full shadow transition duration-300">
-            <i class="fas fa-calendar-alt mr-2"></i> Prendre rendez-vous
-          </a>
-        </div>
-
-        <div class="md:w-1/2">
-          <h2 class="text-3xl font-bold text-teal-800 mb-6">Plan d'accès</h2>
-
-          <!-- MAP PINET -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden mb-4">
-            <div class="p-4 bg-gray-100">
-              <p class="text-gray-700"><i class="fas fa-map-marker-alt text-teal-600 mr-2"></i> Forum Médical, 34850 Pinet</p>
-            </div>
-            <div class="h-64 bg-gray-200 rounded-lg overflow-hidden">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2582.3924542194036!2d3.5106874607207956!3d43.40550554045655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b139d406c92163%3A0xb58d20dd10d4776!2sMURRIA%20Fr%C3%A9d%C3%A9ric%20Ost%C3%A9opathe%20D.O%20au%20FORUM%20MEDICAL%20%C3%A0%20PINET!5e0!3m2!1sfr!2sfr!4v1743876191880!5m2!1sfr!2sfr" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="p-4">
-              <h4 class="font-medium text-gray-800 mb-2">Accès</h4>
-              <p class="text-gray-600">Parking gratuit disponible devant le cabinet.</p>
-              <p class="text-gray-600">Accessible aux personnes à mobilité réduite.</p>
-            </div>
-          </div>
-
-          <!-- PETIT ESPACE ENTRE LES DEUX MAPS -->
-          <div class="map-gap"></div>
-
-          <!-- MAP MONTPELLIER -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <div class="p-4 bg-gray-100">
-              <p class="text-gray-700"><i class="fas fa-map-marker-alt text-teal-600 mr-2"></i> Les bureaux du Polygone – 9ème étage, 265 Avenue des États du Languedoc, 34000 Montpellier</p>
-            </div>
-            <div class="h-64 bg-gray-200 rounded-lg overflow-hidden">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5777.882187510598!2d3.8849575999999995!3d43.6077681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b6af775060875f%3A0x51262bec5641cf1d!2sMURRIA%20Fr%C3%A9d%C3%A9ric%20%E2%80%93%20Ost%C3%A9opathe%20D.O%20(ISOGM)%20%E2%80%93%20Montpellier%20Polygone!5e0!3m2!1sfr!2sfr!4v1766049023438!5m2!1sfr!2sfr" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="p-4">
-              <h4 class="font-medium text-gray-800 mb-2">Accès</h4>
-              <p class="text-gray-600">Accès par l’accueil des bureaux du Polygone.</p>
-              <p class="text-gray-600">Ascenseur jusqu’au 9ème étage.</p>
-            </div>
-          </div>
-
+      <h2 class="text-3xl font-bold text-center text-teal-800 mb-8">Horaires et Accès</h2>
+      
+      <div class="flex justify-center mb-10">
+        <div class="bg-gray-100 p-1.5 rounded-full inline-flex shadow-inner">
+          <button id="tab-pinet" onclick="switchLocation('pinet')" class="px-6 py-2 rounded-full font-medium transition-all duration-300 bg-teal-600 text-white shadow-md">
+            <i class="fas fa-map-marker-alt mr-2"></i>Cabinet Pinet
+          </button>
+          <button id="tab-montpellier" onclick="switchLocation('montpellier')" class="px-6 py-2 rounded-full font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-200 transition-all duration-300">
+            <i class="fas fa-building mr-2"></i>Cabinet Montpellier
+          </button>
         </div>
       </div>
+
+      <div id="content-pinet" class="fade-in">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <div class="lg:w-1/3">
+                <div class="bg-white rounded-xl shadow-md p-6 border-t-4 border-teal-600 h-full">
+                    <h3 class="text-xl font-bold text-teal-800 mb-4">Horaires Pinet</h3>
+                    <ul class="space-y-3 text-sm md:text-base">
+                        <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium w-24">Lundi</span><span class="text-teal-700 font-medium">9h - 12h / 14h - 19h</span></li>
+                        <li class="flex justify-between border-b border-gray-100 pb-2 opacity-50"><span class="font-medium w-24">Mardi</span><span>Fermé (Voir Mtp)</span></li>
+                        <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium w-24">Mercredi</span><span class="text-teal-700 font-medium">9h - 12h / 14h - 19h</span></li>
+                        <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium w-24">Jeudi</span><span class="text-teal-700 font-medium">9h - 12h / 14h - 19h</span></li>
+                        <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium w-24">Vendredi</span><span class="text-teal-700 font-medium">9h - 12h / 14h - 19h</span></li>
+                        <li class="flex justify-between text-gray-400"><span class="font-medium w-24">Samedi</span><span>Fermé</span></li>
+                    </ul>
+                    <div class="mt-6">
+                        <p class="font-bold text-gray-800">Adresse :</p>
+                        <p class="text-gray-600"><br>21 av de Pomerols, 34850 Pinet</p>
+                        <p class="text-xs text-gray-500 mt-2"><i class="fas fa-parking mr-1"></i> Parking gratuit sur place</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-2/3">
+                <div class="bg-gray-200 rounded-xl overflow-hidden shadow-md h-64 lg:h-full relative">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2582.3924542194036!2d3.5106874607207956!3d43.40550554045655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b139d406c92163%3A0xb58d20dd10d4776!2sMURRIA%20Fr%C3%A9d%C3%A9ric%20Ost%C3%A9opathe%20D.O%20au%20FORUM%20MEDICAL%20%C3%A0%20PINET!5e0!3m2!1sfr!2sfr!4v1743876191880!5m2!1sfr!2sfr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="absolute inset-0"></iframe>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div id="content-montpellier" class="hidden fade-in">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <div class="lg:w-1/3">
+                <div class="bg-white rounded-xl shadow-md p-6 border-t-4 border-teal-600 h-full">
+                    <h3 class="text-xl font-bold text-teal-800 mb-4">Horaires Montpellier</h3>
+                    <ul class="space-y-3 text-sm md:text-base">
+                        <li class="flex justify-between border-b border-gray-100 pb-2 opacity-50"><span class="font-medium w-24">Lundi</span><span>Fermé (Voir Pinet)</span></li>
+                        <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium w-24">Mardi</span><span class="text-teal-700 font-medium">9h - 12h / 14h - 19h</span></li>
+                        <li class="flex justify-between border-b border-gray-100 pb-2 opacity-50"><span class="font-medium w-24">Mercredi</span><span>Fermé (Voir Pinet)</span></li>
+                        <li class="flex justify-between border-b border-gray-100 pb-2 opacity-50"><span class="font-medium w-24">Jeudi</span><span>Fermé (Voir Pinet)</span></li>
+                        <li class="flex justify-between border-b border-gray-100 pb-2 opacity-50"><span class="font-medium w-24">Vendredi</span><span>Fermé (Voir Pinet)</span></li>
+                        <li class="flex justify-between text-gray-400"><span class="font-medium w-24">Samedi</span><span>Fermé</span></li>
+                    </ul>
+                    <div class="mt-6">
+                        <p class="font-bold text-gray-800">Adresse :</p>
+                        <p class="text-gray-600">Les bureaux du Polygone<br>9ème étage (Ascenseur)<br>265 Avenue des États du Languedoc</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-2/3">
+                <div class="bg-gray-200 rounded-xl overflow-hidden shadow-md h-64 lg:h-full relative">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5777.882187510598!2d3.8849575999999995!3d43.6077681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b6af775060875f%3A0x51262bec5641cf1d!2sMURRIA%20Fr%C3%A9d%C3%A9ric%20%E2%80%93%20Ost%C3%A9opathe%20D.O%20(ISOGM)%20%E2%80%93%20Montpellier%20Polygone!5e0!3m2!1sfr!2sfr!4v1766049023438!5m2!1sfr!2sfr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="absolute inset-0"></iframe>
+                </div>
+            </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- FAQ -->
   <section id="avis" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4 max-w-3xl">
       <h2 class="text-3xl font-bold text-center text-teal-800 mb-12">Questions fréquentes</h2>
       <div class="space-y-4">
-        <div class="border border-gray-200 rounded-lg overflow-hidden">
-          <button class="w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 transition duration-200 accordion-button">
-            <span class="text-lg font-medium text-teal-800">Quand consulter un ostéopathe ?</span>
+        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <button class="w-full flex justify-between items-center p-4 hover:bg-gray-50 transition duration-200 accordion-button">
+            <span class="font-medium text-teal-800">Quand consulter un ostéopathe ?</span>
             <i class="fas fa-chevron-down text-teal-600 transition-transform duration-300"></i>
           </button>
           <div class="accordion-content bg-white">
-            <div class="p-4 pt-0 text-gray-700">
-              <p>Il est recommandé de consulter un ostéopathe pour :</p>
-              <ul class="list-disc pl-5 mt-2 space-y-1">
-                <li>Douleurs articulaires ou musculaires</li>
-                <li>Maux de tête, migraines</li>
-                <li>Troubles digestifs</li>
-                <li>Suivi de grossesse</li>
-                <li>Après un traumatisme (chute, accident)</li>
-                <li>En prévention, pour un bilan annuel</li>
-              </ul>
+            <div class="p-4 pt-0 text-gray-700 text-sm">
+              <p>Douleurs articulaires, maux de tête, troubles digestifs, suivi de grossesse, post-traumatisme ou simple bilan préventif.</p>
             </div>
           </div>
         </div>
 
-        <div class="border border-gray-200 rounded-lg overflow-hidden">
-          <button class="w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 transition duration-200 accordion-button">
-            <span class="text-lg font-medium text-teal-800">Faut-il une prescription médicale ?</span>
+        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <button class="w-full flex justify-between items-center p-4 hover:bg-gray-50 transition duration-200 accordion-button">
+            <span class="font-medium text-teal-800">Faut-il une prescription médicale ?</span>
             <i class="fas fa-chevron-down text-teal-600 transition-transform duration-300"></i>
           </button>
           <div class="accordion-content bg-white">
-            <div class="p-4 pt-0 text-gray-700">
-              <p>Non, l'ostéopathe est un praticien de première intention, vous pouvez le consulter directement sans prescription médicale. Cependant, dans certains cas particuliers (notamment pour les nourrissons), un avis médical peut être recommandé.</p>
+            <div class="p-4 pt-0 text-gray-700 text-sm">
+              <p>Non, l'ostéopathe est un praticien de première intention. Aucune ordonnance n'est nécessaire.</p>
             </div>
           </div>
         </div>
-
-        <div class="border border-gray-200 rounded-lg overflow-hidden">
-          <button class="w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 transition duration-200 accordion-button">
-            <span class="text-lg font-medium text-teal-800">Combien de séances sont nécessaires ?</span>
+        
+        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <button class="w-full flex justify-between items-center p-4 hover:bg-gray-50 transition duration-200 accordion-button">
+            <span class="font-medium text-teal-800">Acceptez-vous la Carte Bleue ?</span>
             <i class="fas fa-chevron-down text-teal-600 transition-transform duration-300"></i>
           </button>
           <div class="accordion-content bg-white">
-            <div class="p-4 pt-0 text-gray-700">
-              <p>Selon la problématique : en général 1 à 3 séances espacées de 2 à 4 semaines pour l’aigu. Pour du préventif ou du chronique, un suivi régulier peut être conseillé.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="border border-gray-200 rounded-lg overflow-hidden">
-          <button class="w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 transition duration-200 accordion-button">
-            <span class="text-lg font-medium text-teal-800">L'ostéopathie est-elle douloureuse ?</span>
-            <i class="fas fa-chevron-down text-teal-600 transition-transform duration-300"></i>
-          </button>
-          <div class="accordion-content bg-white">
-            <div class="p-4 pt-0 text-gray-700">
-              <p>Les techniques sont généralement douces. Un léger inconfort peut apparaître ponctuellement si la zone est sensible ; les techniques sont adaptées à votre tolérance.</p>
+            <div class="p-4 pt-0 text-gray-700 text-sm">
+              <p class="font-bold text-red-600">Non, pas de terminal CB.</p>
+              <p>Règlement par chèque, espèces ou virement instantané (Wero).</p>
             </div>
           </div>
         </div>
@@ -427,193 +468,149 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center text-teal-800 mb-12">Contactez-moi</h2>
-      <div class="flex flex-col md:flex-row">
-        <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-          <div class="bg-white rounded-xl shadow-lg p-8">
-            <h3 class="text-xl font-semibold text-teal-800 mb-4">Informations de contact</h3>
-            <ul class="space-y-3 text-gray-700">
-              <li><i class="fas fa-map-marker-alt text-teal-600 mr-2"></i> Forum Médical, 34850 Pinet</li>
-              <li><i class="fas fa-map-marker-alt text-teal-600 mr-2"></i> Les bureaux du Polygone – 9ème étage, 34000 Montpellier</li>
-              <li><i class="fas fa-phone-alt text-teal-600 mr-2"></i> 06 70 60 59 84</li>
-              <li><i class="fas fa-envelope text-teal-600 mr-2"></i> contact@osteomagazine.com</li>
-              <li class="mt-4 text-center text-sm text-gray-700 italic">
-                Découvrez <a href="https://osteomagazine.com" target="_blank" rel="noopener" class="text-teal-700 underline hover:text-teal-900">Osteomagazine.com</a> — un petit magazine santé gratuit et sans publicité.
-                <br/>Scannez pour le consulter :
-                <img src="https://rdv-osteopathe-pinet.netlify.app/qr-code.png" alt="QR Code Osteomagazine" class="mx-auto mt-2 w-24 h-24" />
-              </li>
+      <h2 class="text-3xl font-bold text-center text-teal-800 mb-12">Me contacter</h2>
+      <div class="flex flex-col md:flex-row gap-8">
+        <div class="md:w-1/2">
+          <div class="bg-white rounded-xl shadow-lg p-8 h-full">
+            <h3 class="text-xl font-semibold text-teal-800 mb-6">Coordonnées</h3>
+            <ul class="space-y-4 text-gray-700">
+              <li class="flex items-center"><div class="w-8"><i class="fas fa-phone-alt text-teal-600"></i></div> 06 70 60 59 84</li>
+              <li class="flex items-center"><div class="w-8"><i class="fas fa-envelope text-teal-600"></i></div> contact@osteomagazine.com</li>
             </ul>
+            
+            <div class="mt-8 pt-8 border-t border-gray-100 text-center">
+                <p class="mb-4 text-sm text-gray-600">Découvrez mon magazine santé gratuit :</p>
+                <a href="https://osteomagazine.com" target="_blank" class="inline-block hover:opacity-80 transition">
+                    <img src="https://rdv-osteopathe-pinet.netlify.app/qr-code.png" alt="QR Code Osteomagazine" class="mx-auto w-32 h-32 border p-2 rounded" />
+                    <span class="block text-teal-700 font-bold mt-2">Osteomagazine.com</span>
+                </a>
+            </div>
           </div>
         </div>
 
         <div class="md:w-1/2">
           <div class="bg-white rounded-xl shadow-lg p-8">
-            <h3 class="text-xl font-semibold text-teal-800 mb-6">Formulaire de contact</h3>
+            <h3 class="text-xl font-semibold text-teal-800 mb-6">Envoyer un message</h3>
             <div id="form-success" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
-              Merci pour votre message. Je vous répondrai dans les plus brefs délais.
+              Message envoyé avec succès !
             </div>
             <div id="form-error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-              Une erreur est survenue. Veuillez réessayer plus tard.
+              Erreur lors de l'envoi.
             </div>
             <form id="contact-form" class="space-y-4">
-              <div>
-                <label for="firstname" class="block text-gray-700 mb-1">Prénom</label>
-                <input type="text" id="firstname" name="firstname" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none" required>
+              <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-gray-700 text-sm mb-1">Prénom</label>
+                    <input type="text" name="firstname" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none" required>
+                  </div>
+                  <div>
+                    <label class="block text-gray-700 text-sm mb-1">Nom</label>
+                    <input type="text" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none" required>
+                  </div>
               </div>
               <div>
-                <label for="name" class="block text-gray-700 mb-1">Nom</label>
-                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none" required>
+                <label class="block text-gray-700 text-sm mb-1">Email</label>
+                <input type="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none" required>
               </div>
               <div>
-                <label for="email" class="block text-gray-700 mb-1">Email</label>
-                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none" required>
+                <label class="block text-gray-700 text-sm mb-1">Message</label>
+                <textarea name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none" required></textarea>
               </div>
-              <div>
-                <label for="phone" class="block text-gray-700 mb-1">Téléphone</label>
-                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none">
-              </div>
-              <div>
-                <label for="subject" class="block text-gray-700 mb-1">Sujet</label>
-                <select id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none">
-                  <option value="rendezvous">Prise de rendez-vous</option>
-                  <option value="information">Demande d'information</option>
-                  <option value="urgence">Demande urgente</option>
-                  <option value="autre">Autre</option>
-                </select>
-              </div>
-              <div>
-                <label for="message" class="block text-gray-700 mb-1">Message</label>
-                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:outline-none" required></textarea>
-              </div>
-              <div>
-                <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
-                  Envoyer le message
-                </button>
-              </div>
+              <button type="submit" class="w-full bg-teal-800 hover:bg-teal-900 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                Envoyer
+              </button>
             </form>
-            <script>
-              const form = document.getElementById("contact-form");
-              const successMsg = document.getElementById("form-success");
-              const errorMsg = document.getElementById("form-error");
-              form.addEventListener("submit", function(e) {
-                e.preventDefault();
-                successMsg.classList.add("hidden");
-                errorMsg.classList.add("hidden");
-                const data = new FormData(form);
-                fetch("https://script.google.com/macros/s/AKfycbwXacBkzRYufy57bcUjC2TT_Jfi2V7gzHX0tHJDeerDLe8K0WGmS5T92S40NvAPa_ny/exec", {
-                  method: "POST",
-                  body: data
-                })
-                .then(r => r.text())
-                .then(() => { successMsg.classList.remove("hidden"); form.reset(); })
-                .catch(err => { errorMsg.classList.remove("hidden"); console.error("Erreur:", err); });
-              });
-            </script>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-teal-800 text-white py-12">
-    <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-4 gap-8">
+  <footer class="bg-teal-900 text-white py-12 mb-16 md:mb-0">
+    <div class="container mx-auto px-4 text-center md:text-left">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
         <div>
-          <h3 class="text-xl font-bold mb-4">Frédéric Murria</h3>
-          <p class="text-teal-100">Ostéopathe D.O à Pinet</p>
-          <p class="text-teal-100 mt-2">Consultations sur rendez-vous</p>
-          <h4 class="font-bold mb-4 mt-4">Osteomagazine.com</h4>
-          <a href="https://rdv-osteopathe-pinet.netlify.app/qr-code.png" target="_blank" rel="noopener" class="btn-prise-rdv inline-block bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded shadow transition duration-300 mb-4">
-            <i class="fas fa-newspaper mr-2"></i> Mon Blog
-          </a>
+          <h3 class="text-xl font-bold mb-2">Frédéric Murria</h3>
+          <p class="text-teal-200 text-sm">Ostéopathe D.O</p>
         </div>
         <div>
-          <h4 class="font-bold mb-4">Navigation</h4>
-          <ul class="space-y-2">
-            <li><a href="#presentation" class="text-teal-100 hover:text-white transition duration-200">Présentation</a></li>
-            <li><a href="#consultations" class="text-teal-100 hover:text-white transition duration-200">Consultations</a></li>
-            <li><a href="#tarifs" class="text-teal-100 hover:text-white transition duration-200">Tarifs</a></li>
-            <li><a href="#horaires" class="text-teal-100 hover:text-white transition duration-200">Horaires</a></li>
-            <li><a href="#avis" class="text-teal-100 hover:text-white transition duration-200">Avis</a></li>
-            <li><a href="#contact" class="text-teal-100 hover:text-white transition duration-200">Contact</a></li>
-          </ul>
+           <p class="font-bold mb-2">Cabinets</p>
+           <p class="text-teal-200 text-sm">34850 Pinet</p>
+           <p class="text-teal-200 text-sm">34000 Montpellier</p>
         </div>
         <div>
-          <h4 class="font-bold mb-4">Contact</h4>
-          <address class="not-italic text-teal-100">
-            <p>Forum Médical</p>
-            <p>34850 Pinet</p>
-            <p class="mt-2">06 70 60 59 84</p>
-            <p>contact@osteomagazine.com</p>
-          </address>
-        </div>
-        <div>
-          <h4 class="font-bold mb-4">Prendre rendez-vous</h4>
-          <a href="https://rdv.terapiz.com/osteopathe/pinet/frederic-murria" target="_blank" rel="noopener" class="btn-prise-rdv inline-block bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded shadow transition duration-300 mb-4">
-            <i class="fas fa-calendar-alt mr-2"></i> En ligne
-          </a>
-          <p class="text-teal-100 text-sm">Ou par téléphone aux heures d'ouverture</p>
+            <a href="https://rdv.terapiz.com/osteopathe/pinet/frederic-murria" target="_blank" class="bg-white text-teal-900 font-bold py-2 px-6 rounded-full hover:bg-gray-100 transition inline-block">Prendre RDV</a>
         </div>
       </div>
-
-      <div class="border-t border-teal-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-        <p class="text-teal-100 text-sm mb-4 md:mb-0">© 2023-2025 Frédéric Murria — Tous droits réservés</p>
-        <div class="flex space-x-6">
-          <a href="#" class="text-teal-100 hover:text-white transition duration-200 text-sm">Mentions légales</a>
-          <a href="#" class="text-teal-100 hover:text-white transition duration-200 text-sm">Politique de confidentialité</a>
-          <a href="#" class="text-teal-100 hover:text-white transition duration-200 text-sm">CGU</a>
-        </div>
-      </div>
-
-      <div class="relative w-full overflow-hidden" style="height:150px; pointer-events:none; z-index:0;">
-        <svg viewBox="0 0 1200 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:auto;">
-          <defs>
-            <linearGradient id="grad1" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0%" stop-color="#c0f0f5"/>
-              <stop offset="100%" stop-color="#a1e3ef"/>
-            </linearGradient>
-          </defs>
-          <path fill="url(#grad1)">
-            <animate attributeName="d" dur="12s" repeatCount="indefinite"
-              values="M0,30 C300,90 900,-30 1200,30 L1200,150 L0,150 Z;
-                      M0,40 C300,-10 900,100 1200,40 L1200,150 L0,150 Z;
-                      M0,30 C300,90 900,-30 1200,30 L1200,150 L0,150 Z" />
-          </path>
-        </svg>
+      <div class="border-t border-teal-800 pt-8 text-sm text-teal-400">
+        <p>© 2025 Frédéric Murria — Tous droits réservés.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Back to top -->
-  <button id="back-to-top" class="fixed bottom-6 right-6 bg-teal-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+  <div class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-white border-t border-gray-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] p-3">
+    <a href="https://rdv.terapiz.com/osteopathe/pinet/frederic-murria" target="_blank" rel="noopener" class="block w-full bg-teal-600 text-white text-center font-bold py-3 rounded-lg shadow-lg hover:bg-teal-700 transition">
+        Prendre rendez-vous
+    </a>
+  </div>
+
+  <button id="back-to-top" class="fixed bottom-24 right-6 bg-gray-800 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-40">
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <!-- Scripts -->
   <script>
-    // Mobile menu toggle
+    // 1. Gestion des onglets (Tabs) Pinet/Montpellier
+    function switchLocation(location) {
+        const btnPinet = document.getElementById('tab-pinet');
+        const btnMontp = document.getElementById('tab-montpellier');
+        const contentPinet = document.getElementById('content-pinet');
+        const contentMontp = document.getElementById('content-montpellier');
+        
+        // Classes pour bouton actif vs inactif
+        const activeClasses = ['bg-teal-600', 'text-white', 'shadow-md'];
+        const inactiveClasses = ['text-gray-500', 'hover:text-gray-700', 'hover:bg-gray-200'];
+
+        if(location === 'pinet') {
+            // Activer Pinet
+            btnPinet.classList.add(...activeClasses);
+            btnPinet.classList.remove(...inactiveClasses);
+            contentPinet.classList.remove('hidden');
+            
+            // Désactiver Montpellier
+            btnMontp.classList.remove(...activeClasses);
+            btnMontp.classList.add(...inactiveClasses);
+            contentMontp.classList.add('hidden');
+        } else {
+            // Activer Montpellier
+            btnMontp.classList.add(...activeClasses);
+            btnMontp.classList.remove(...inactiveClasses);
+            contentMontp.classList.remove('hidden');
+            
+            // Désactiver Pinet
+            btnPinet.classList.remove(...activeClasses);
+            btnPinet.classList.add(...inactiveClasses);
+            contentPinet.classList.add('hidden');
+        }
+    }
+
+    // 2. Menu Mobile
     document.getElementById('mobile-menu-button').addEventListener('click', function() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
+      document.getElementById('mobile-menu').classList.toggle('hidden');
     });
 
-    // Accordion
-    const accordionButtons = document.querySelectorAll('.accordion-button');
-    accordionButtons.forEach(button => {
+    // 3. Accordéon FAQ
+    document.querySelectorAll('.accordion-button').forEach(button => {
       button.addEventListener('click', () => {
         const content = button.nextElementSibling;
         const icon = button.querySelector('i');
         content.classList.toggle('active');
-        icon.classList.toggle('transform');
         icon.classList.toggle('rotate-180');
       });
     });
 
-    // Back to top
+    // 4. Back to top
     const backToTopButton = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
       if (window.pageYOffset > 300) {
@@ -626,23 +623,26 @@
     });
     backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // Smooth scroll for anchors
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
-          const mobileMenu = document.getElementById('mobile-menu');
-          if (mobileMenu && !mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
-        }
-      });
+    // 5. Contact Form Script
+    const form = document.getElementById("contact-form");
+    const successMsg = document.getElementById("form-success");
+    const errorMsg = document.getElementById("form-error");
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        successMsg.classList.add("hidden");
+        errorMsg.classList.add("hidden");
+        const data = new FormData(form);
+        fetch("https://script.google.com/macros/s/AKfycbwXacBkzRYufy57bcUjC2TT_Jfi2V7gzHX0tHJDeerDLe8K0WGmS5T92S40NvAPa_ny/exec", {
+            method: "POST",
+            body: data
+        })
+        .then(r => r.text())
+        .then(() => { successMsg.classList.remove("hidden"); form.reset(); })
+        .catch(err => { errorMsg.classList.remove("hidden"); console.error(err); });
     });
 
-    // GA4 conversion event for all RDV buttons
-    document.querySelectorAll('.btn-prise-rdv').forEach(button => {
+    // 6. Suivi des clics pour Google Ads/Analytics
+    document.querySelectorAll('a[href*="terapiz"]').forEach(button => {
       button.addEventListener('click', function() {
         if (typeof gtag === 'function') {
           gtag('event', 'clic_prendre_rdv', {
