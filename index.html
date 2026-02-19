@@ -51,7 +51,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
-    /* Fond Gris-Bleu adouci pour éviter l'effet flash blanc */
     body { background-color: #f1f5f9; } 
     .hero-gradient{background:linear-gradient(135deg,#e0f7fa 0%,#b2ebf2 50%,#80deea 100%)}
     .nav-link{position:relative; transition: color 0.3s;}
@@ -73,12 +72,18 @@
             <span class="text-xs font-bold text-teal-400 uppercase tracking-widest">Ostéopathe D.O à Pinet</span>
         </div>
       </div>
-      <nav class="hidden lg:flex space-x-8 font-bold text-sm uppercase">
-        <a href="#presentation" class="nav-link text-teal-50 hover:text-teal-400">Bio</a>
-        <a href="#consultations" class="nav-link text-teal-50 hover:text-teal-400">Soins</a>
-        <a href="#blog" class="nav-link text-teal-50 hover:text-teal-400">Magazine</a>
-        <a href="#contact" class="nav-link text-teal-50 hover:text-teal-400">Contact</a>
-      </nav>
+      
+      <div class="flex items-center gap-4">
+        <nav class="hidden lg:flex space-x-8 font-bold text-sm uppercase">
+            <a href="#presentation" class="nav-link text-teal-50 hover:text-teal-400">Parcours</a>
+            <a href="#consultations" class="nav-link text-teal-50 hover:text-teal-400">Soins</a>
+            <a href="#blog" class="nav-link text-teal-50 hover:text-teal-400">Magazine</a>
+            <a href="#contact" class="nav-link text-teal-50 hover:text-teal-400">Contact</a>
+        </nav>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=MURRIA+Frédéric+Ostéopathe+D.O+Pinet" target="_blank" class="lg:hidden bg-teal-600 text-white text-[10px] font-black px-3 py-2 rounded-lg border border-teal-400 shadow-lg flex items-center gap-1">
+            <i class="fas fa-location-arrow"></i> S'Y RENDRE
+        </a>
+      </div>
     </div>
   </header>
 
@@ -86,7 +91,7 @@
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
       <div class="md:w-1/2">
         <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-6 leading-tight tracking-tighter">Cabinet d'Ostéopathie à Pinet</h2>
-        <p class="text-xl md:text-2xl text-teal-900 mb-8 font-bold italic">Secteur : Pinet, Marseillan, Florensac & Pomérols</p>
+        <p class="text-xl md:text-2xl text-teal-900 mb-8 font-bold italic">Expertise locale : Pinet, Marseillan, Florensac & Pomérols</p>
         <a href="https://rdv.terapiz.com/osteopathe/pinet/frederic-murria" target="_blank" class="hidden md:inline-block bg-slate-900 text-teal-400 font-black py-5 px-12 rounded-xl shadow-2xl transition transform hover:scale-105 border-2 border-teal-400 uppercase tracking-widest">
           Prendre RDV en ligne
         </a>
@@ -96,11 +101,11 @@
           <h3 class="text-2xl font-black text-slate-900 mb-8 flex items-center"><i class="fas fa-parking mr-3 text-teal-600"></i> Accès & Parking Privé</h3>
           <div class="space-y-8">
               <div class="flex items-start gap-5">
-                  <div class="text-teal-500 text-3xl mt-1"><i class="fas fa-sign-in-alt"></i></div>
+                  <div class="text-teal-500 text-3xl mt-1"><i class="fas fa-door-open"></i></div>
                   <div>
-                      <p class="text-xl font-black text-slate-900 mb-2">Consignes au portail :</p>
-                      <p class="text-xl text-slate-700 leading-relaxed font-medium">
-                        Au portail, <strong>sonnez</strong>, attendez l'ouverture, <strong>entrez</strong> et garez-vous simplement dans la cour.
+                      <p class="text-xl font-black text-slate-900 mb-2 underline decoration-teal-300">Consignes au portail :</p>
+                      <p class="text-xl text-slate-700 leading-relaxed font-medium italic">
+                        "Au portail, <strong>sonnez</strong>, attendez l'ouverture, <strong>entrez</strong> et garez-vous simplement dans la cour."
                       </p>
                       <p class="text-sm text-teal-600 font-black mt-3 uppercase italic tracking-widest bg-teal-50 p-2 rounded inline-block">Parking privé et gratuit sur place</p>
                   </div>
@@ -126,7 +131,7 @@
             <div class="review-card rounded-3xl p-10 text-center relative overflow-hidden bg-white shadow-xl">
                 <div class="absolute top-0 left-0 w-full h-2 bg-teal-500"></div>
                 <h3 class="text-2xl font-bold text-slate-900 mb-4">Soutenez votre praticien local</h3>
-                <p class="text-slate-600 mb-8 text-lg italic font-medium leading-relaxed">"Votre recommandation est précieuse pour le rayonnement du cabinet."</p>
+                <p class="text-slate-600 mb-8 text-lg italic font-medium leading-relaxed">"Votre recommandation est le meilleur soutien pour faire rayonner le cabinet."</p>
                 <a href="https://g.page/r/CXZHDdEN0lgLEBE/review" target="_blank" class="inline-flex items-center px-10 py-4 bg-slate-900 text-teal-400 font-black text-lg rounded-full hover:bg-slate-800 shadow-xl transition-all border-2 border-teal-500">
                     <i class="fab fa-google mr-4 text-xl"></i> LAISSER MON AVIS (5.0 ★)
                 </a>
@@ -201,7 +206,7 @@
         <div class="bg-slate-900 p-8 rounded-3xl shadow-xl border-t-8 border-teal-400 flex flex-col justify-between text-white">
             <div>
                 <h3 class="text-2xl font-black mb-4 flex justify-between items-center tracking-tight uppercase text-sm">À domicile <i class="fas fa-car-side text-teal-400"></i></h3>
-                <p class="text-teal-100 text-sm mb-8 leading-relaxed italic">Secteur : Pinet, Marseillan, Florensac, Pomérols. Créneau de 2h incluant le trajet et 50 min de soin effectif.</p>
+                <p class="text-teal-100 text-sm mb-8 leading-relaxed italic">Pinet, Marseillan, Florensac, Pomérols. Créneau de 2h incluant le trajet et 50 min de soin effectif.</p>
             </div>
             <div class="flex justify-between items-center border-t border-slate-700 pt-6"><span class="font-bold text-teal-400 uppercase text-xs">Secteur Thau</span><span class="text-3xl font-black">70€</span></div>
         </div>
@@ -217,12 +222,11 @@
         
         <div id="blog-container">
             <div class="bg-white/5 p-10 rounded-3xl border-2 border-white/10 hover:border-teal-400 transition-all group backdrop-blur-sm">
-                <span class="text-xs font-black text-teal-400 uppercase tracking-widest mb-6 block underline italic">À la une d'Osteomagazine :</span>
+                <span class="text-xs font-black text-teal-400 uppercase tracking-widest mb-6 block underline italic">Dernier article à la une :</span>
                 <a id="latest-post-title" href="https://osteomagazine.com" target="_blank" class="text-2xl md:text-4xl font-black text-white group-hover:text-teal-400 leading-tight block mb-6 transition">
                     Chargement de l'actualité...
                 </a>
                 <p id="latest-post-desc" class="text-teal-100 mb-10 text-lg line-clamp-3 italic leading-relaxed"></p>
-                
                 <a id="latest-post-btn" href="https://osteomagazine.com" target="_blank" class="inline-block bg-teal-500 text-slate-900 font-black px-12 py-4 rounded-full shadow-2xl hover:bg-teal-400 transition transform group-hover:scale-105">
                     LIRE L'APERÇU COMPLET
                 </a>
@@ -241,12 +245,12 @@
                 <div class="flex justify-between text-slate-300 italic"><span>Samedi - Dimanche</span><span>Fermé</span></div>
             </div>
             <div class="mt-8 p-6 bg-amber-50 rounded-2xl text-amber-900 font-bold text-sm border border-amber-100 shadow-sm">
-                <i class="fas fa-wallet mr-2"></i> Règlement par Chèque, Espèces ou Wero (Pas de Carte Bancaire).
+                <i class="fas fa-wallet mr-2"></i> Chèque, Espèces ou Wero (Pas de Carte Bancaire).
             </div>
         </div>
         <div class="lg:w-2/3 h-[450px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2898.868202020202!2d3.4735345!3d43.4024475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b86b7bc75f3%3A0x4f355d9d941f5f28!2s21%20Av.%20de%20Pomerols%2C%2034850%20Pinet!5e0!3m2!1sfr!2sfr!4v1700000000000" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2894.4965154378714!2d3.50645917614063!3d43.40030937111584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b139d406b8f5f3%3A0x4b584f0dd1075fa1!2sMURRIA%20Fr%C3%A9d%C3%A9ric%20Ost%C3%A9opathe%20D.O!5e0!3m2!1sfr!2sfr!4v1710000000000!5m2!1sfr!2sfr" 
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
@@ -305,7 +309,7 @@
   </div>
 
   <script>
-    // RSS SUBSTACK - Récupération Titre + Aperçu depuis osteomagazine.com/feed
+    // RSS SUBSTACK - Récupération Titre + Aperçu
     fetch('https://api.rss2json.com/v1/api.json?rss_url=https://osteomagazine.com/feed')
     .then(res => res.json())
     .then(data => {
@@ -313,17 +317,16 @@
             const post = data.items[0];
             document.getElementById('latest-post-title').innerText = post.title;
             let preview = post.description.replace(/<[^>]*>?/gm, '');
-            document.getElementById('latest-post-desc').innerText = preview.substring(0, 180) + '...';
+            document.getElementById('latest-post-desc').innerText = preview.substring(0, 200) + '...';
             document.getElementById('latest-post-title').href = post.link;
             document.getElementById('latest-post-btn').href = post.link;
         }
     })
     .catch(() => {
-        document.getElementById('latest-post-title').innerText = "Découvrez mes derniers articles santé";
-        document.getElementById('latest-post-desc').innerText = "Retrouvez tous mes conseils sur mon magazine en ligne.";
+        document.getElementById('latest-post-title').innerText = "Suivez mon magazine santé sur Osteomagazine.com";
     });
 
-    // Formulaire Web3Forms
+    // Formulaire
     const form = document.getElementById("contact-form");
     const successMsg = document.getElementById("form-success");
     form.addEventListener("submit", function(e) {
