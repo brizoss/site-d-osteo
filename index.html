@@ -51,9 +51,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
-    /* Fond adouci en dégradé pour supprimer l'effet flash */
-    body { background: linear-gradient(to bottom, #f0f9ff, #e0f2f1); min-height: 100vh; } 
-    .hero-gradient{background:linear-gradient(135deg,#b2ebf2 0%,#80deea 100%)}
+    /* Fond Gris-Bleu adouci pour éviter l'effet flash blanc */
+    body { background-color: #f1f5f9; } 
+    .hero-gradient{background:linear-gradient(135deg,#e0f7fa 0%,#b2ebf2 50%,#80deea 100%)}
     .nav-link{position:relative; transition: color 0.3s;}
     .nav-link:after{content:'';position:absolute;width:0;height:2px;bottom:-4px;left:0;background-color:#4fd1c5;transition:width .3s ease}
     .nav-link:hover:after{width:100%}
@@ -63,9 +63,9 @@
 <body class="font-sans text-slate-800 pb-24 md:pb-0"> 
 
   <header class="bg-slate-900 shadow-xl sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <div class="flex items-center">
-        <div class="bg-white p-1 rounded-lg mr-4">
+        <div class="bg-white p-1 rounded-lg mr-4 shadow-inner">
             <img src="https://rdv-osteopathe-pinet.netlify.app/logo.png" alt="Logo" class="h-10 w-auto">
         </div>
         <div>
@@ -74,7 +74,7 @@
         </div>
       </div>
       <nav class="hidden lg:flex space-x-8 font-bold text-sm uppercase">
-        <a href="#presentation" class="nav-link text-teal-50 hover:text-teal-400">Parcours</a>
+        <a href="#presentation" class="nav-link text-teal-50 hover:text-teal-400">Bio</a>
         <a href="#consultations" class="nav-link text-teal-50 hover:text-teal-400">Soins</a>
         <a href="#blog" class="nav-link text-teal-50 hover:text-teal-400">Magazine</a>
         <a href="#contact" class="nav-link text-teal-50 hover:text-teal-400">Contact</a>
@@ -87,8 +87,8 @@
       <div class="md:w-1/2">
         <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-6 leading-tight tracking-tighter">Cabinet d'Ostéopathie à Pinet</h2>
         <p class="text-xl md:text-2xl text-teal-900 mb-8 font-bold italic">Secteur : Pinet, Marseillan, Florensac & Pomérols</p>
-        <a href="https://rdv.terapiz.com/osteopathe/pinet/frederic-murria" target="_blank" class="hidden md:inline-block bg-slate-900 text-teal-400 font-black py-5 px-12 rounded-xl shadow-2xl transition transform hover:scale-105 border-2 border-teal-400">
-          PRENDRE RDV EN LIGNE
+        <a href="https://rdv.terapiz.com/osteopathe/pinet/frederic-murria" target="_blank" class="hidden md:inline-block bg-slate-900 text-teal-400 font-black py-5 px-12 rounded-xl shadow-2xl transition transform hover:scale-105 border-2 border-teal-400 uppercase tracking-widest">
+          Prendre RDV en ligne
         </a>
       </div>
       <div class="md:w-1/2 flex justify-center w-full">
@@ -96,20 +96,20 @@
           <h3 class="text-2xl font-black text-slate-900 mb-8 flex items-center"><i class="fas fa-parking mr-3 text-teal-600"></i> Accès & Parking Privé</h3>
           <div class="space-y-8">
               <div class="flex items-start gap-5">
-                  <div class="text-teal-500 text-3xl mt-1"><i class="fas fa-door-open"></i></div>
+                  <div class="text-teal-500 text-3xl mt-1"><i class="fas fa-sign-in-alt"></i></div>
                   <div>
-                      <p class="text-xl font-black text-slate-900 mb-1">Consignes au portail</p>
-                      <p class="text-lg text-slate-700 leading-relaxed">
-                        Arrivé au portail, <strong>sonnez</strong>, attendez l'ouverture, puis <strong>entrez</strong> et garez-vous simplement dans la cour.
+                      <p class="text-xl font-black text-slate-900 mb-2">Consignes au portail :</p>
+                      <p class="text-xl text-slate-700 leading-relaxed font-medium">
+                        Au portail, <strong>sonnez</strong>, attendez l'ouverture, <strong>entrez</strong> et garez-vous simplement dans la cour.
                       </p>
-                      <p class="text-sm text-teal-600 font-black mt-2 uppercase italic tracking-widest">Le parking est réservé et gratuit</p>
+                      <p class="text-sm text-teal-600 font-black mt-3 uppercase italic tracking-widest bg-teal-50 p-2 rounded inline-block">Parking privé et gratuit sur place</p>
                   </div>
               </div>
               <div class="flex items-center gap-5 border-t border-slate-100 pt-8">
-                  <div class="text-teal-500 text-3xl"><i class="fas fa-map-marked-alt"></i></div>
+                  <div class="text-teal-500 text-3xl"><i class="fas fa-map-marker-alt"></i></div>
                   <div>
-                      <p class="text-lg font-bold text-slate-500">Adresse</p>
-                      <p class="text-xl font-black text-slate-900 uppercase">21 av de Pomerols, 34850 PINET</p>
+                      <p class="text-lg font-bold text-slate-400">Adresse du Cabinet</p>
+                      <p class="text-2xl font-black text-slate-900">21 avenue de Pomerols, 34850 PINET</p>
                   </div>
               </div>
           </div>
@@ -119,35 +119,35 @@
   </section>
 
   <section class="py-16">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-4 text-center">
         <script src="https://static.elfsight.com/platform/platform.js" async></script>
         <div class="elfsight-app-2462fbaa-084b-4373-91c0-224c3f82d0c3" data-elfsight-app-lazy></div>
         <div class="mt-12 max-w-3xl mx-auto">
-            <div class="review-card rounded-3xl p-10 text-center relative overflow-hidden bg-white">
+            <div class="review-card rounded-3xl p-10 text-center relative overflow-hidden bg-white shadow-xl">
                 <div class="absolute top-0 left-0 w-full h-2 bg-teal-500"></div>
                 <h3 class="text-2xl font-bold text-slate-900 mb-4">Soutenez votre praticien local</h3>
-                <p class="text-slate-600 mb-8 text-lg italic leading-relaxed">"Votre avis est essentiel pour faire connaître le cabinet à Pinet et ses environs."</p>
-                <a href="https://g.page/r/CXZHDdEN0lgLEBE/review" target="_blank" class="inline-flex items-center px-12 py-4 bg-slate-900 text-teal-400 font-black text-lg rounded-full hover:bg-teal-800 shadow-xl transition-all border-2 border-teal-500">
-                    <i class="fab fa-google mr-4 text-xl"></i> LAISSER UN AVIS (5.0 ★)
+                <p class="text-slate-600 mb-8 text-lg italic font-medium leading-relaxed">"Votre recommandation est précieuse pour le rayonnement du cabinet."</p>
+                <a href="https://g.page/r/CXZHDdEN0lgLEBE/review" target="_blank" class="inline-flex items-center px-10 py-4 bg-slate-900 text-teal-400 font-black text-lg rounded-full hover:bg-slate-800 shadow-xl transition-all border-2 border-teal-500">
+                    <i class="fab fa-google mr-4 text-xl"></i> LAISSER MON AVIS (5.0 ★)
                 </a>
             </div>
         </div>
     </div>
   </section>
 
-  <section id="presentation" class="py-24 bg-white/50 border-y border-teal-100">
+  <section id="presentation" class="py-24 bg-white border-y border-teal-100">
     <div class="container mx-auto px-4">
       <div class="flex flex-col md:flex-row items-center gap-16">
         <div class="md:w-1/2">
           <h2 class="text-4xl font-black text-slate-900 mb-8 tracking-tight">23 ans d'expertise médicale</h2>
-          <p class="text-lg text-slate-700 mb-6 text-justify leading-relaxed">Ancien manipulateur radio spécialisé en scanner et IRM, j'ai forgé une expertise considérable en sémio-pathologie à travers des milliers de cas rencontrés.</p>
+          <p class="text-lg text-slate-700 mb-6 text-justify leading-relaxed font-medium">Ancien manipulateur radio spécialisé en scanner et IRM, j'ai forgé une expertise considérable en sémio-pathologie à travers des milliers de cas rencontrés.</p>
           <p class="text-lg text-slate-700 mb-8 text-justify leading-relaxed">Cette expérience unique me permet d'analyser vos examens (radios, IRM) avec une grande finesse pour cibler l'origine de vos douleurs, avec une compréhension <strong>globale</strong> du corps humain.</p>
           <div class="bg-teal-900 p-6 rounded-2xl border-l-8 border-teal-400 italic text-teal-50 font-bold shadow-lg">
-            "L'imagerie médicale au service d'une ostéopathie précise."
+            "L'imagerie médicale mise au profit d'une ostéopathie précise et sécurisante."
           </div>
         </div>
         <div class="md:w-1/2">
-          <img src="https://rdv-osteopathe-pinet.netlify.app/manipulateur.png" class="rounded-3xl shadow-2xl w-full border-8 border-white">
+          <img src="https://rdv-osteopathe-pinet.netlify.app/manipulateur.png" alt="Manipulateur radio" class="rounded-3xl shadow-2xl w-full border-8 border-white">
         </div>
       </div>
     </div>
@@ -155,97 +155,98 @@
 
   <section id="consultations" class="py-24">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-black text-center text-slate-900 mb-16 tracking-tight">Vos soins au cabinet</h2>
+      <h2 class="text-4xl font-black text-center text-slate-900 mb-16 tracking-tight underline decoration-teal-300">Vos soins au cabinet</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
         
-        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-teal-600 flex flex-col justify-between transform hover:scale-[1.02] transition">
+        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-teal-600 flex flex-col justify-between">
             <div>
-                <h3 class="text-2xl font-black text-teal-900 mb-4 tracking-tight uppercase text-sm">Ostéopathie Adulte</h3>
+                <h3 class="text-2xl font-black text-teal-900 mb-4 uppercase text-sm tracking-widest">Ostéopathie Adulte</h3>
                 <p class="text-slate-600 text-lg mb-8 leading-relaxed italic">Bilan complet, prise en charge globale des douleurs musculo-squelettiques et conseils adaptés.</p>
             </div>
             <div class="flex justify-between items-center border-t pt-6"><span class="font-bold text-slate-400 italic">50 min</span><span class="text-3xl font-black text-teal-700">60€</span></div>
         </div>
 
-        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-teal-600 flex flex-col justify-between transform hover:scale-[1.02] transition">
+        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-teal-600 flex flex-col justify-between">
             <div>
-                <h3 class="text-2xl font-black text-teal-900 mb-4 tracking-tight uppercase text-sm">Consultation -12 ans</h3>
+                <h3 class="text-2xl font-black text-teal-900 mb-4 uppercase text-sm tracking-widest">Consultation -12 ans</h3>
                 <p class="text-slate-600 text-lg mb-8 leading-relaxed italic">Approche douce et adaptée aux enfants, dialogue avec les parents pour le suivi personnalisé.</p>
             </div>
             <div class="flex justify-between items-center border-t pt-6"><span class="font-bold text-slate-400 italic">30 min</span><span class="text-3xl font-black text-teal-700">40€</span></div>
         </div>
 
-        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-teal-600 flex flex-col justify-between transform hover:scale-[1.02] transition">
+        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-teal-600 flex flex-col justify-between">
             <div>
-                <h3 class="text-2xl font-black text-teal-900 mb-4 tracking-tight uppercase text-sm">Consultation ciblée</h3>
+                <h3 class="text-2xl font-black text-teal-900 mb-4 uppercase text-sm tracking-widest">Consultation ciblée</h3>
                 <p class="text-slate-600 text-lg mb-8 leading-relaxed italic">Séance courte centrée sur une problématique précise (douleur localisée, urgence relative).</p>
             </div>
             <div class="flex justify-between items-center border-t pt-6"><span class="font-bold text-slate-400 italic">30 min</span><span class="text-3xl font-black text-teal-700">35€</span></div>
         </div>
 
-        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-teal-600 flex flex-col justify-between transform hover:scale-[1.02] transition">
+        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-teal-600 flex flex-col justify-between">
             <div>
-                <h3 class="text-2xl font-black text-teal-900 mb-4 tracking-tight uppercase text-sm">Drainage lymphatique</h3>
+                <h3 class="text-2xl font-black text-teal-900 mb-4 uppercase text-sm tracking-widest">Drainage lymphatique</h3>
                 <p class="text-slate-600 text-lg mb-8 leading-relaxed italic">Technique manuelle douce destinée à stimuler la circulation de la lymphe et détoxifier l'organisme.</p>
             </div>
             <div class="flex justify-between items-center border-t pt-6"><span class="font-bold text-slate-400 italic">40 min</span><span class="text-3xl font-black text-teal-700">50€</span></div>
         </div>
 
-        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-teal-600 flex flex-col justify-between transform hover:scale-[1.02] transition">
+        <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-teal-600 flex flex-col justify-between">
             <div>
-                <h3 class="text-2xl font-black text-teal-900 mb-4 tracking-tight uppercase text-sm">Massage thérapeutique</h3>
+                <h3 class="text-2xl font-black text-teal-900 mb-4 uppercase text-sm tracking-widest">Massage thérapeutique</h3>
                 <p class="text-slate-600 text-lg mb-8 leading-relaxed italic">Massage profond de récupération, détente musculaire et amélioration de la mobilité.</p>
             </div>
             <div class="flex justify-between items-center border-t pt-6"><span class="font-bold text-slate-400 italic">50 min</span><span class="text-3xl font-black text-teal-700">70€</span></div>
         </div>
 
-        <div class="bg-slate-900 p-8 rounded-3xl shadow-xl border-t-8 border-teal-400 flex flex-col justify-between text-white transform hover:scale-[1.02] transition">
+        <div class="bg-slate-900 p-8 rounded-3xl shadow-xl border-t-8 border-teal-400 flex flex-col justify-between text-white">
             <div>
                 <h3 class="text-2xl font-black mb-4 flex justify-between items-center tracking-tight uppercase text-sm">À domicile <i class="fas fa-car-side text-teal-400"></i></h3>
-                <p class="text-teal-100 text-sm mb-8 leading-relaxed">Secteur : Pinet, Marseillan, Florensac, Pomérols. Créneau incluant le trajet et 50 min de soin effectif.</p>
+                <p class="text-teal-100 text-sm mb-8 leading-relaxed italic">Secteur : Pinet, Marseillan, Florensac, Pomérols. Créneau de 2h incluant le trajet et 50 min de soin effectif.</p>
             </div>
-            <div class="flex justify-between items-center border-t border-slate-700 pt-6"><span class="font-bold text-teal-400 uppercase text-xs">Bassin de Thau</span><span class="text-3xl font-black">70€</span></div>
+            <div class="flex justify-between items-center border-t border-slate-700 pt-6"><span class="font-bold text-teal-400 uppercase text-xs">Secteur Thau</span><span class="text-3xl font-black">70€</span></div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <section id="blog" class="py-24 bg-teal-900 text-white">
+  <section id="blog" class="py-24 bg-slate-900 text-white border-y border-teal-900/50">
     <div class="container mx-auto px-4 max-w-4xl text-center">
-        <h2 class="text-4xl font-black mb-4 tracking-tight">Dernières Parutions</h2>
-        <p class="text-xl text-teal-300 mb-16 italic">Magazine santé & Expertise ostéopathique</p>
+        <h2 class="text-4xl font-black mb-4 tracking-tight">Le Magazine Santé</h2>
+        <p class="text-xl text-teal-400 mb-16 italic font-medium">Conseils d'expert & Actualités</p>
         
         <div id="blog-container">
-            <div class="bg-white/10 p-10 rounded-3xl border-2 border-white/20 hover:border-teal-400 transition-all group backdrop-blur-md">
-                <span class="text-xs font-black text-teal-400 uppercase tracking-widest mb-4 block underline italic">À la une d'Osteomagazine :</span>
-                <a id="latest-post-title" href="https://osteomagazine.com/feed" target="_blank" class="text-2xl md:text-4xl font-black text-white group-hover:text-teal-400 leading-tight block mb-6">
-                    Chargement de l'actualité santé...
+            <div class="bg-white/5 p-10 rounded-3xl border-2 border-white/10 hover:border-teal-400 transition-all group backdrop-blur-sm">
+                <span class="text-xs font-black text-teal-400 uppercase tracking-widest mb-6 block underline italic">À la une d'Osteomagazine :</span>
+                <a id="latest-post-title" href="https://osteomagazine.com" target="_blank" class="text-2xl md:text-4xl font-black text-white group-hover:text-teal-400 leading-tight block mb-6 transition">
+                    Chargement de l'actualité...
                 </a>
-                <p id="latest-post-desc" class="text-teal-100 mb-8 text-lg line-clamp-2 italic"></p>
-                <a id="latest-post-btn" href="https://osteomagazine.com" target="_blank" class="inline-block bg-teal-500 text-slate-900 font-black px-10 py-4 rounded-full shadow-xl hover:bg-teal-400 transition transform group-hover:scale-105">
-                    LIRE L'ARTICLE COMPLET
+                <p id="latest-post-desc" class="text-teal-100 mb-10 text-lg line-clamp-3 italic leading-relaxed"></p>
+                
+                <a id="latest-post-btn" href="https://osteomagazine.com" target="_blank" class="inline-block bg-teal-500 text-slate-900 font-black px-12 py-4 rounded-full shadow-2xl hover:bg-teal-400 transition transform group-hover:scale-105">
+                    LIRE L'APERÇU COMPLET
                 </a>
             </div>
         </div>
     </div>
   </section>
 
-  <section id="horaires" class="py-24">
+  <section id="horaires" class="py-24 bg-slate-100 border-y">
     <div class="container mx-auto px-4">
       <div class="flex flex-col lg:flex-row gap-12">
         <div class="lg:w-1/3">
             <h2 class="text-3xl font-black text-slate-900 mb-8 tracking-tight">Horaires & Accès</h2>
             <div class="bg-white p-8 rounded-3xl shadow-xl border-l-8 border-slate-900 font-bold text-xl space-y-4">
-                <div class="flex justify-between border-b border-slate-100 pb-4"><span>Lundi - Vendredi</span><span class="text-teal-700">9h - 19h</span></div>
-                <div class="flex justify-between text-slate-300 italic"><span>Weekend</span><span>Fermé</span></div>
+                <div class="flex justify-between border-b border-slate-50 pb-4"><span>Lundi - Vendredi</span><span class="text-teal-700">9h - 19h</span></div>
+                <div class="flex justify-between text-slate-300 italic"><span>Samedi - Dimanche</span><span>Fermé</span></div>
             </div>
-            <div class="mt-8 p-6 bg-amber-50 rounded-2xl text-amber-900 font-bold text-sm border border-amber-200">
-                <i class="fas fa-wallet mr-2"></i> Chèque, Espèces ou Wero (Pas de CB)
+            <div class="mt-8 p-6 bg-amber-50 rounded-2xl text-amber-900 font-bold text-sm border border-amber-100 shadow-sm">
+                <i class="fas fa-wallet mr-2"></i> Règlement par Chèque, Espèces ou Wero (Pas de Carte Bancaire).
             </div>
         </div>
         <div class="lg:w-2/3 h-[450px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2898.344465457851!2d3.5075677!3d43.4116417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b11b85b7b4f5f3%3A0x4f215d9d94185fa8!2s21%20Av.%20de%20Pom%C3%A9rols%2C%2034850%20Pinet!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2898.868202020202!2d3.4735345!3d43.4024475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13b86b7bc75f3%3A0x4f355d9d941f5f28!2s21%20Av.%20de%20Pomerols%2C%2034850%20Pinet!5e0!3m2!1sfr!2sfr!4v1700000000000" 
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
@@ -253,14 +254,14 @@
     </div>
   </section>
 
-  <section id="contact" class="py-24 bg-slate-100">
+  <section id="contact" class="py-24 bg-white">
     <div class="container mx-auto px-4 max-w-6xl">
         <div class="flex flex-col md:flex-row gap-20">
             <div class="md:w-1/2">
                 <h2 class="text-5xl font-black mb-8 leading-tight tracking-tighter text-slate-900">Me Contacter</h2>
                 <div class="space-y-10">
                     <div class="flex items-center gap-6">
-                        <div class="bg-slate-900 p-5 rounded-2xl text-teal-400 text-3xl shadow-xl"><i class="fas fa-phone-alt"></i></div>
+                        <div class="bg-slate-900 p-6 rounded-2xl text-teal-400 text-3xl shadow-xl"><i class="fas fa-phone-alt"></i></div>
                         <div>
                             <p class="text-teal-600 font-black uppercase text-xs tracking-widest mb-1">Téléphone Direct</p>
                             <p class="text-4xl font-black text-slate-900 tracking-tighter">06 70 60 59 84</p>
@@ -269,13 +270,13 @@
                 </div>
             </div>
             <div class="md:w-1/2">
-                <div class="bg-white rounded-3xl p-10 text-slate-800 shadow-2xl border-b-8 border-teal-500">
+                <div class="bg-slate-50 rounded-3xl p-10 text-slate-800 shadow-2xl border-b-8 border-teal-500">
                     <div id="form-success" class="hidden bg-green-50 text-green-800 p-4 rounded-xl mb-6 font-bold text-center border-2 border-green-200 uppercase tracking-widest text-sm italic">Message transmis avec succès !</div>
                     <form id="contact-form" class="space-y-6">
                         <input type="hidden" name="access_key" value="62a4e11b-f8e0-48d3-8fbf-c16c33a20078">
-                        <input type="text" name="name" placeholder="Votre Nom Complet" class="w-full bg-slate-50 border-2 border-slate-100 p-4 rounded-2xl outline-none focus:ring-4 focus:ring-teal-100 transition font-bold" required>
-                        <input type="email" name="email" placeholder="Votre Adresse Email" class="w-full bg-slate-50 border-2 border-slate-100 p-4 rounded-2xl outline-none focus:ring-4 focus:ring-teal-100 transition font-bold" required>
-                        <textarea name="message" placeholder="Détaillez votre demande ici..." rows="4" class="w-full bg-slate-50 border-2 border-slate-100 p-4 rounded-2xl outline-none focus:ring-4 focus:ring-teal-100 transition font-bold" required></textarea>
+                        <input type="text" name="name" placeholder="Votre Nom" class="w-full bg-white border-2 border-slate-100 p-4 rounded-2xl outline-none focus:ring-4 focus:ring-teal-100 transition font-bold" required>
+                        <input type="email" name="email" placeholder="Votre Email" class="w-full bg-white border-2 border-slate-100 p-4 rounded-2xl outline-none focus:ring-4 focus:ring-teal-100 transition font-bold" required>
+                        <textarea name="message" placeholder="Détaillez votre demande ici..." rows="4" class="w-full bg-white border-2 border-slate-100 p-4 rounded-2xl outline-none focus:ring-4 focus:ring-teal-100 transition font-bold" required></textarea>
                         <button type="submit" class="w-full bg-slate-900 text-teal-400 font-black py-5 rounded-2xl hover:bg-slate-800 shadow-xl transition transform hover:-translate-y-1 uppercase tracking-widest">Envoyer le message</button>
                     </form>
                 </div>
@@ -288,13 +289,13 @@
     <div class="container mx-auto px-4 text-center">
         <p class="font-black text-3xl mb-2 text-teal-500 tracking-tighter uppercase">Frédéric Murria — Ostéopathe D.O</p>
         <p class="text-slate-500 font-black mb-8 italic text-sm tracking-widest">N° ADELI : 340008544</p>
-        <p class="text-[11px] text-slate-600 max-w-2xl mx-auto leading-relaxed uppercase tracking-[0.3em] font-black italic">
+        <p class="text-[11px] text-slate-700 max-w-2xl mx-auto leading-relaxed uppercase tracking-[0.3em] font-black italic">
             Pinet • Marseillan • Florensac • Pomérols • Agde • Pézenas • Bessan
         </p>
     </div>
   </footer>
 
-  <div class="md:hidden fixed bottom-0 left-0 w-full z-50 grid grid-cols-2 gap-3 p-3 bg-slate-900/95 backdrop-blur-md border-t border-teal-500/30 shadow-[0_-15px_30px_rgba(0,0,0,0.4)]">
+  <div class="md:hidden fixed bottom-0 left-0 w-full z-50 grid grid-cols-2 gap-3 p-3 bg-slate-900/95 backdrop-blur-sm border-t border-teal-500/30 shadow-[0_-15px_30px_rgba(0,0,0,0.4)]">
     <a href="tel:+33670605984" class="bg-white text-slate-900 text-center font-black py-5 rounded-2xl flex items-center justify-center border-2 border-teal-400 shadow-lg">
         <i class="fas fa-phone-alt mr-3 text-teal-600"></i> APPELER
     </a>
@@ -304,21 +305,25 @@
   </div>
 
   <script>
-    // RSS SUBSTACK DYNAMIQUE
-    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://osteomagazine.substack.com/feed')
+    // RSS SUBSTACK - Récupération Titre + Aperçu depuis osteomagazine.com/feed
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://osteomagazine.com/feed')
     .then(res => res.json())
     .then(data => {
-        const post = data.items[0];
-        document.getElementById('latest-post-title').innerText = post.title;
-        document.getElementById('latest-post-desc').innerHTML = post.description.replace(/<[^>]*>?/gm, '').substring(0, 180) + '...';
-        document.getElementById('latest-post-title').href = post.link;
-        document.getElementById('latest-post-btn').href = post.link;
+        if (data.status === 'ok') {
+            const post = data.items[0];
+            document.getElementById('latest-post-title').innerText = post.title;
+            let preview = post.description.replace(/<[^>]*>?/gm, '');
+            document.getElementById('latest-post-desc').innerText = preview.substring(0, 180) + '...';
+            document.getElementById('latest-post-title').href = post.link;
+            document.getElementById('latest-post-btn').href = post.link;
+        }
     })
     .catch(() => {
-        document.getElementById('latest-post-title').innerText = "Suivez mon magazine santé sur Substack";
+        document.getElementById('latest-post-title').innerText = "Découvrez mes derniers articles santé";
+        document.getElementById('latest-post-desc').innerText = "Retrouvez tous mes conseils sur mon magazine en ligne.";
     });
 
-    // FORMULAIRE WEB3FORMS
+    // Formulaire Web3Forms
     const form = document.getElementById("contact-form");
     const successMsg = document.getElementById("form-success");
     form.addEventListener("submit", function(e) {
@@ -329,5 +334,3 @@
   </script>
 </body>
 </html>
-
-
