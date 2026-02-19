@@ -114,7 +114,7 @@
             </div>
             <p class="text-sm">
               <strong>Pinet :</strong> 21 av de Pomerols<br>
-              Sonnez , attendez, entrez et Garez vous ! 
+              Sonnez au portail , attendez , entrez et garez-vous ! 
             </p>
           </div>
           <div class="flex items-center mb-4">
@@ -390,7 +390,7 @@
                     <h3 class="text-xl font-bold text-teal-800 mb-4">Horaires Cabinet Pinet</h3>
                     <ul class="space-y-3 text-sm md:text-base">
                         <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium w-24">Lundi</span><span class="text-teal-700 font-medium">9h - 12h / 14h - 19h</span></li>
-                        <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium w-24">Mardi</span><span>9h - 12h / 14h - 19h</span></li>
+                        <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium w-24">Mardi</span><span class="text-teal-700 font-medium">9h - 12h / 14h - 19h</span></li>
                         <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium w-24">Mercredi</span><span class="text-teal-700 font-medium">9h - 12h / 14h - 19h</span></li>
                         <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium w-24">Jeudi</span><span class="text-teal-700 font-medium">9h - 12h / 14h - 19h</span></li>
                         <li class="flex justify-between border-b border-gray-100 pb-2"><span class="font-medium w-24">Vendredi</span><span class="text-teal-700 font-medium">9h - 12h / 14h - 19h</span></li>
@@ -579,7 +579,7 @@
     });
     backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // 4. Contact Form Script (AVEC MODE NO-CORS POUR REPARER LE BLOCAGE)
+    // 4. Contact Form Script (RESTAURÉ EXACTEMENT COMME À L'ORIGINE)
     const form = document.getElementById("contact-form");
     const successMsg = document.getElementById("form-success");
     const errorMsg = document.getElementById("form-error");
@@ -593,9 +593,9 @@
         
         fetch("https://script.google.com/macros/s/AKfycbwXacBkzRYufy57bcUjC2TT_Jfi2V7gzHX0tHJDeerDLe8K0WGmS5T92S40NvAPa_ny/exec", {
             method: "POST",
-            body: data,
-            mode: "no-cors"
+            body: data
         })
+        .then(r => r.text())
         .then(() => { 
             successMsg.classList.remove("hidden"); 
             form.reset(); 
@@ -621,4 +621,3 @@
   </script>
 </body>
 </html>
-
