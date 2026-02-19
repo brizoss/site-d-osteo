@@ -26,6 +26,14 @@
         "postalCode": "34850",
         "addressCountry": "FR"
     },
+    "areaServed": [
+      {"@type": "City", "name": "Pinet"},
+      {"@type": "City", "name": "Marseillan"},
+      {"@type": "City", "name": "Pomérols"},
+      {"@type": "City", "name": "Florensac"},
+      {"@type": "City", "name": "Bessan"},
+      {"@type": "City", "name": "Mèze"}
+    ],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
@@ -114,7 +122,7 @@
             </div>
             <p class="text-sm">
               <strong>Pinet :</strong> 21 av de Pomerols<br>
-              Sonnez au portail , attendez , entrez et garez-vous ! 
+              Entrez et garez-vous dans la cour !
             </p>
           </div>
           <div class="flex items-center mb-4">
@@ -398,7 +406,7 @@
                     </ul>
                     <div class="mt-6">
                         <p class="font-bold text-gray-800">Adresse :</p>
-                        <p class="text-gray-600">Forum Médical<br>21 av de Pomerols, 34850 Pinet</p>
+                        <p class="text-gray-600">21 av de Pomerols, 34850 Pinet</p>
                         <p class="text-xs text-gray-500 mt-2"><i class="fas fa-parking mr-1"></i> Parking gratuit sur place</p>
                     </div>
                 </div>
@@ -528,10 +536,11 @@
         <div>
           <h3 class="text-xl font-bold mb-2">Frédéric Murria</h3>
           <p class="text-teal-200 text-sm">Ostéopathe D.O</p>
+          <p class="text-xs text-teal-400 mt-4 italic">Ostéopathie à Pinet, proche de Marseillan et Pomérols.</p>
         </div>
         <div>
-           <p class="font-bold mb-2">Cabinets</p>
-           <p class="text-teal-200 text-sm">34850 Pinet</p>
+           <p class="font-bold mb-2">Cabinet</p>
+           <p class="text-teal-200 text-sm">21 avenue de Pomerols<br>34850 Pinet</p>
         </div>
         <div>
             <a href="https://rdv.terapiz.com/osteopathe/pinet/frederic-murria" target="_blank" class="bg-white text-teal-900 font-bold py-2 px-6 rounded-full hover:bg-gray-100 transition inline-block">Prendre RDV</a>
@@ -582,7 +591,7 @@
     });
     backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // 4. Contact Form Script (REMPLACÉ PAR WEB3FORMS)
+    // 4. Contact Form Script (WEB3FORMS)
     const form = document.getElementById("contact-form");
     const successMsg = document.getElementById("form-success");
     const errorMsg = document.getElementById("form-error");
@@ -612,7 +621,7 @@
         });
     });
 
-    // 5. Suivi des clics pour Google Ads/Analytics
+    // 5. Suivi des clics
     document.querySelectorAll('a[href*="terapiz"]').forEach(button => {
       button.addEventListener('click', function() {
         if (typeof gtag === 'function') {
