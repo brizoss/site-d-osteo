@@ -1,0 +1,38 @@
+name: Auto Sync Health Articles
+
+on:
+  schedule:
+    # Tourne chaque lundi matin à 08:00 UTC (10:00 heure française)
+    - cron: '0 8 * * 1'
+  workflow_dispatch: # Permet aussi de déclencher manuellement en 1 clic depuis l'interface GitHub
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run synchronization script
+        run: |
+          python sync_health_articles.py
+
+      - name: Commit and push changes if any new articles
+        run: |
+          git config user.name "Robot Revue Santé"
+          git config user.email "action@github.com"
+          git add articles/ articles_registry.json revue-sante.html sitemap.xml
+          if git diff --staged --quiet; then
+            echo "Aucun nouvel article à publier aujourd'hui."
+          else
+            git commit -m "Auto: Publication hebdomadaire des nouveaux dossiers de santé [skip ci]"
+            git push
+          fi
