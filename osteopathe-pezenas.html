@@ -180,6 +180,8 @@
             <a href="#presentation" class="nav-link hover:text-teal-400 transition">Parcours</a>
             <a href="#consultations" class="nav-link hover:text-teal-400 transition">Soins</a>
             <a href="#acces-pezenas" class="nav-link hover:text-teal-400 transition">Accès 12 min</a>
+            <a href="#blog" class="nav-link hover:text-teal-400 transition">Magazine</a>
+            <a href="#faq" class="nav-link hover:text-teal-400 transition">FAQ</a>
             <a href="#contact" class="nav-link hover:text-teal-400 transition">Contact</a>
         </nav>
         <a href="https://www.google.com/maps/dir/Pézenas/MURRIA+Frédéric+Ostéopathe+D.O+Pinet" target="_blank" class="lg:hidden bg-teal-600 text-white text-[10px] font-black px-4 py-2 rounded-full border border-teal-400 shadow-lg flex items-center gap-2 animate-pulse">
@@ -354,6 +356,34 @@
   </section>
 
   
+  
+  <!-- Section Osteomagazine -->
+  <section id="blog" class="py-24 bg-slate-900 text-white border-y border-teal-900/50">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+        <span class="text-xs font-black text-teal-400 uppercase tracking-widest block mb-3">Publication clinique & Vulgarisation médicale</span>
+        <h2 class="text-3xl md:text-5xl font-black mb-4 tracking-tighter">Le Magazine Santé par Frédéric Murria</h2>
+        <p class="text-xl text-teal-300 mb-12 italic font-medium">Comprendre vos maux de dos, la biomécanique et l'imagerie médicale</p>
+        
+        <div id="blog-container">
+            <div class="bg-white/5 p-8 md:p-10 rounded-3xl border-2 border-white/10 hover:border-teal-400 transition-all group backdrop-blur-md">
+                <span class="text-xs font-black text-teal-400 uppercase tracking-widest mb-4 block underline italic">Dernier article à la une d'Osteomagazine :</span>
+                <a id="latest-post-title" href="https://osteomagazine.com" target="_blank" class="text-2xl md:text-3xl font-black text-white group-hover:text-teal-400 leading-tight block mb-4 transition">
+                    Chargement de l'actualité...
+                </a>
+                <p id="latest-post-desc" class="text-teal-100 mb-8 text-base md:text-lg line-clamp-3 italic leading-relaxed"></p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                  <a id="latest-post-btn" href="https://osteomagazine.com" target="_blank" class="inline-block bg-teal-500 text-slate-900 font-black px-8 py-3.5 rounded-full shadow-2xl hover:bg-teal-400 transition transform group-hover:scale-105 text-sm uppercase tracking-wider">
+                      Lire l'article complet
+                  </a>
+                  <a href="https://osteomagazine.com" target="_blank" class="inline-block bg-transparent text-white border-2 border-teal-400 font-black px-8 py-3.5 rounded-full hover:bg-teal-400/20 transition text-sm uppercase tracking-wider">
+                      Explorer Osteomagazine.com (78+ articles)
+                  </a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
   <section id="faq" class="py-24 bg-slate-50 border-t border-slate-200">
     <div class="container mx-auto px-4 max-w-4xl">
       <div class="text-center mb-16">
@@ -473,6 +503,36 @@
   </div>
 
   <script>
+    
+    // RSS OSTEOMAGAZINE - Titre + Apercu dynamique
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://osteomagazine.com/feed')
+    .then(res => res.json())
+    .then(data => {
+        if (data.status === 'ok' && data.items && data.items.length > 0) {
+            const post = data.items[0];
+            const titleEl = document.getElementById('latest-post-title');
+            const descEl = document.getElementById('latest-post-desc');
+            const btnEl = document.getElementById('latest-post-btn');
+            if (titleEl) {
+                titleEl.innerText = post.title;
+                titleEl.href = post.link;
+            }
+            if (descEl) {
+                let preview = post.description.replace(/<[^>]*>?/gm, '');
+                descEl.innerText = preview.substring(0, 180) + '...';
+            }
+            if (btnEl) {
+                btnEl.href = post.link;
+            }
+        }
+    })
+    .catch(() => {
+        const titleEl = document.getElementById('latest-post-title');
+        if (titleEl) {
+            titleEl.innerText = "Consulter les articles cliniques sur Osteomagazine.com";
+        }
+    });
+
     const form = document.getElementById("contact-form");
     const successMsg = document.getElementById("form-success");
     if (form) {
